@@ -29,7 +29,7 @@ export const HeroHeader = () => {
             <nav
                 data-state={menuState && 'active'}
                 className="fixed z-20 w-full px-2 font-sans">
-                <div className={cn('mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12', isScrolled && 'bg-background/50 max-w-4xl rounded-full border backdrop-blur-lg lg:px-5')}>
+                <div className={cn('mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12', isScrolled && 'max-w-4xl md:bg-background/50 md:rounded-full md:border md:backdrop-blur-lg lg:px-5')}>
                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
                         <div className="flex w-full justify-between lg:w-auto">
                             <Link
@@ -81,9 +81,9 @@ export const HeroHeader = () => {
                                     asChild
                                     size="sm"
                                     className="relative">
-                                    <Link href="#" className="flex items-center pr-10">
+                                    <Link href="#kontakt" className="flex items-center pr-13">
                                         <span>Začni</span>
-                                        <div className="absolute right-3 flex items-center justify-center w-6 h-6 bg-white rounded-full">
+                                        <div className="absolute right-2 flex items-center justify-center w-6 h-6 bg-white rounded-full">
                                             <ArrowUpRight className="h-3.5 w-3.5 text-black" />
                                         </div>
                                     </Link>

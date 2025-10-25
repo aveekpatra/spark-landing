@@ -168,7 +168,7 @@ export default function HeroSection() {
                                             asChild
                                             size="lg"
                                             className="rounded-full px-6 text-base">
-                                            <Link href="#link">
+                                            <Link href="#kontakt">
                                                 <span className="text-nowrap">Pošlji povpraševanje</span>
                                             </Link>
                                         </Button>
@@ -179,7 +179,7 @@ export default function HeroSection() {
                                         size="lg"
                                         variant="ghost"
                                         className="h-11 rounded-full px-6">
-                                        <Link href="#link">
+                                        <Link href="#kontakt">
                                             <span className="text-nowrap">Pokliči nas</span>
                                         </Link>
                                     </Button>
@@ -199,17 +199,17 @@ export default function HeroSection() {
                                 },
                                 item: transitionVariants.item,
                             }}>
-                            <div className="mask-b-from-55% relative -mr-56 mt-6 overflow-hidden px-2 sm:mr-0 sm:mt-8 md:mt-14">
-                                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
+                            <div className="mask-b-from-55% relative mt-6 overflow-hidden px-2 sm:mt-8 md:mt-14">
+                                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-xs overflow-hidden rounded-xl border p-2 shadow-lg shadow-zinc-950/15 ring-1 sm:max-w-lg sm:rounded-2xl sm:p-3 md:max-w-2xl md:p-4 lg:max-w-3xl xl:max-w-4xl">
                                     <Image
-                                        className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
+                                        className="bg-background aspect-video relative hidden rounded-xl dark:block sm:aspect-[4/3] sm:rounded-2xl md:aspect-15/8"
                                         src="/mail2.png"
                                         alt="app screen"
                                         width="2700"
                                         height="1440"
                                     />
                                     <Image
-                                        className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border dark:hidden"
+                                        className="z-2 border-border/25 aspect-video relative rounded-xl border dark:hidden sm:aspect-[4/3] sm:rounded-2xl md:aspect-15/8"
                                         src="/mydesk1.png"
                                         alt="app screen"
                                         width="2700"

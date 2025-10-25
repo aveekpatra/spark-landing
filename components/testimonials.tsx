@@ -118,10 +118,10 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
             </Avatar>
 
             <div>
-                <h3 className="font-sans font-medium">{testimonial.name}</h3>
-                <span className="text-muted-foreground block text-sm tracking-wide">{testimonial.role}</span>
+                <h3 className="font-['Comfortaa'] font-medium">{testimonial.name}</h3>
+                <span className="text-muted-foreground block text-sm tracking-wide font-['Comfortaa']">{testimonial.role}</span>
                 <blockquote className="mt-3">
-                    <p className="text-gray-700 dark:text-gray-300">{testimonial.quote}</p>
+                    <p className="text-gray-700 dark:text-gray-300 font-['Comfortaa']">{testimonial.quote}</p>
                 </blockquote>
             </div>
         </CardContent>
@@ -133,9 +133,13 @@ export default function WallOfLoveSection() {
         <section>
             <div className="py-16 md:py-32">
                 <div className="mx-auto max-w-6xl px-6">
-                    <div className="text-center">
-                        <h2 className="font-sans text-3xl font-semibold">Zadovoljni stranki</h2>
-                        <p className="mt-6">Mnenja naših strank o kakovosti storitev Spark Service.</p>
+                    <div className="mx-auto max-w-2xl text-center">
+                        <h2 className="font-['Comfortaa'] text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+                            Zadovoljni stranki
+                        </h2>
+                        <p className="mt-2 font-['Comfortaa'] text-lg leading-8 text-gray-600 dark:text-gray-300">
+                            Mnenja naših strank o kakovosti storitev Spark Service.
+                        </p>
                     </div>
                     <div className="mt-8 grid gap-3 sm:grid-cols-2 md:mt-12 lg:grid-cols-3 overflow-hidden">
                         {scrollingChunks.map((chunk, chunkIndex) => {
@@ -147,7 +151,7 @@ export default function WallOfLoveSection() {
                             return (
                                 <div
                                     key={chunkIndex}
-                                    className="relative overflow-hidden"
+                                    className={`relative overflow-hidden ${chunkIndex === 0 || chunkIndex === 2 ? 'hidden lg:block' : ''}`}
                                     style={{ height: '600px' }} // Fixed height for overflow
                                 >
                                     <motion.div

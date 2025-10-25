@@ -1,82 +1,116 @@
-import { Button } from '@/components/ui/button'
-import { Card } from '@/components/ui/card'
-import { ChevronRight, Monitor, Code, Globe, Smartphone } from 'lucide-react'
-import Link from 'next/link'
-import * as React from 'react'
+'use client'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+import { Monitor, Code, Globe, Smartphone } from 'lucide-react'
+import Image from 'next/image'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'motion/react'
+import { BorderBeam } from '@/components/ui/border-beam'
 
-export default function ServicesSection() {
+export default function Features() {
+    type ImageKey = 'item-1' | 'item-2' | 'item-3' | 'item-4'
+    const [activeItem, setActiveItem] = useState<ImageKey>('item-1')
+
+    const images = {
+        'item-1': {
+            image: '/Close-Up Motherboard View.png',
+            alt: 'Computer service and hardware repair',
+        },
+        'item-2': {
+            image: '/Coding Workspace Close-Up.png',
+            alt: 'Programming and development workspace',
+        },
+        'item-3': {
+            image: '/Cozy Café Workstation.png',
+            alt: 'Website development workspace',
+        },
+        'item-4': {
+            image: '/Hand Holding Smartphone.png',
+            alt: 'Mobile application development',
+        },
+    }
+
     return (
-        <section>
-            <div className="py-32">
-                <div className="mx-auto max-w-5xl px-6">
-                    <div className="text-center">
-                        <h2 className="font-sans text-balance text-3xl font-semibold md:text-4xl">Storitve</h2>
-                        <p className="text-muted-foreground mt-6">Odkrijte naš celovit nabor storitev, prilagojenih vašim potrebam.</p>
-                    </div>
+        <section className="py-12 md:py-20 lg:py-32">
+            <div className="bg-linear-to-b absolute inset-0 -z-10 sm:inset-6 sm:rounded-b-3xl dark:block dark:to-[color-mix(in_oklab,var(--color-zinc-900)_75%,var(--color-background))]"></div>
+            <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16 lg:space-y-20 dark:[--color-border:color-mix(in_oklab,var(--color-white)_10%,transparent)]">
+                <div className="relative z-10 mx-auto max-w-2xl space-y-6 text-center">
+                    <h2 className="font-['Comfortaa'] text-balance text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Naše storitve</h2>
+                    <p className="font-['Comfortaa'] text-base leading-7 text-gray-600 dark:text-gray-300">Spark Service ponuja celovite IT rešitve - od računalniškega servisa do razvoja spletnih strani in aplikacij. Vse na enem mestu.</p>
+                </div>
 
-                    <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
-                        <ServiceCard
-                            title="Računalniški servis"
-                            description="Popravila, čiščenje, diagnostika in reševanje podatkov za vse vrste računalnikov.">
-                            <Monitor className="h-12 w-12 text-primary" />
-                        </ServiceCard>
+                <div className="grid gap-12 sm:px-12 md:grid-cols-2 lg:gap-20 lg:px-0">
+                    <Accordion
+                        type="single"
+                        value={activeItem}
+                        onValueChange={(value) => setActiveItem(value as ImageKey)}
+                        className="w-full">
+                        <AccordionItem value="item-1">
+                            <AccordionTrigger>
+                                <div className="flex items-center gap-2 text-base font-['Comfortaa']">
+                                    <Monitor className="size-4" />
+                                    Računalniški servis
+                                </div>
+                            </AccordionTrigger>
+                            <AccordionContent className="font-['Comfortaa']">Popravila, čiščenje, diagnostika in reševanje podatkov. Poskrbimo za vaš računalnik in ga pripravimo za nemoteno delovanje.</AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-2">
+                            <AccordionTrigger>
+                                <div className="flex items-center gap-2 text-base font-['Comfortaa']">
+                                    <Code className="size-4" />
+                                    Programiranje
+                                </div>
+                            </AccordionTrigger>
+                            <AccordionContent className="font-['Comfortaa']">Skripte, avtomatizacija in razvoj po meri. Ustvarjamo programske rešitve, ki olajšajo vaše vsakodnevne naloge.</AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-3">
+                            <AccordionTrigger>
+                                <div className="flex items-center gap-2 text-base font-['Comfortaa']">
+                                    <Globe className="size-4" />
+                                    Spletne strani
+                                </div>
+                            </AccordionTrigger>
+                            <AccordionContent className="font-['Comfortaa']">WordPress, SEO, hitrost in dizajn. Izdelujemo moderne spletne strani, ki so hitro naložene in optimizirane za iskalnike.</AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-4">
+                            <AccordionTrigger>
+                                <div className="flex items-center gap-2 text-base font-['Comfortaa']">
+                                    <Smartphone className="size-4" />
+                                    Aplikacije
+                                </div>
+                            </AccordionTrigger>
+                            <AccordionContent className="font-['Comfortaa']">Mobilne in spletne aplikacije z odličnim UX/UI. Razvijamo uporabniško prijazne aplikacije za različne platforme.</AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
 
-                        <ServiceCard
-                            title="Programiranje"
-                            description="Skripte, avtomatizacija procesov in razvoj programskih rešitev po meri.">
-                            <Code className="h-12 w-12 text-primary" />
-                        </ServiceCard>
-
-                        <ServiceCard
-                            title="Spletne strani"
-                            description="WordPress, SEO optimizacija, hitrost nalaganja in sodoben dizajn.">
-                            <Globe className="h-12 w-12 text-primary" />
-                        </ServiceCard>
-
-                        <ServiceCard
-                            title="Aplikacije"
-                            description="Mobilne in spletne aplikacije z uporabniškim vmesnikom (UX/UI).">
-                            <Smartphone className="h-12 w-12 text-primary" />
-                        </ServiceCard>
-                    </div>
-
-                    <div className="mt-12 text-center">
-                        <Button asChild size="lg">
-                            <Link href="#contact">
-                                Pošlji povpraševanje
-                                <ChevronRight className="ml-2 h-4 w-4" />
-                            </Link>
-                        </Button>
+                    <div className="bg-background relative flex overflow-hidden rounded-3xl border p-2">
+                        <div className="w-15 absolute inset-0 right-0 ml-auto border-l bg-[repeating-linear-gradient(-45deg,var(--color-border),var(--color-border)_1px,transparent_1px,transparent_8px)]"></div>
+                        <div className="aspect-76/59 bg-background relative w-[calc(3/4*100%+3rem)] rounded-2xl">
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={`${activeItem}-id`}
+                                    initial={{ opacity: 0, y: 6, scale: 0.98 }}
+                                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                                    exit={{ opacity: 0, y: 6, scale: 0.98 }}
+                                    transition={{ duration: 0.2 }}
+                                    className="size-full overflow-hidden rounded-2xl border bg-zinc-900 shadow-md">
+                                    <Image
+                                        src={images[activeItem].image}
+                                        className="size-full object-cover object-left-top dark:mix-blend-lighten"
+                                        alt={images[activeItem].alt}
+                                        width={1207}
+                                        height={929}
+                                    />
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
+                        <BorderBeam
+                            duration={6}
+                            size={200}
+                            className="from-transparent via-yellow-700 to-transparent dark:via-white/50"
+                        />
                     </div>
                 </div>
             </div>
         </section>
-    )
-}
-const ServiceCard = ({ title, description, children, link = '#contact' }: { title: string; description: string; children: React.ReactNode; link?: string }) => {
-    return (
-        <Card className="p-6">
-            <div className="relative">
-                <div className="*:size-12">{children}</div>
-
-                <div className="space-y-2 py-6">
-                    <h3 className="font-sans text-base font-medium">{title}</h3>
-                    <p className="text-muted-foreground line-clamp-3 text-sm">{description}</p>
-                </div>
-
-                <div className="flex gap-3 border-t border-dashed pt-6">
-                    <Button
-                        asChild
-                        variant="secondary"
-                        size="sm"
-                        className="gap-1 pr-2 shadow-none">
-                        <Link href={link}>
-                            Več informacij
-                            <ChevronRight className="ml-0 !size-3.5 opacity-50" />
-                        </Link>
-                    </Button>
-                </div>
-            </div>
-        </Card>
     )
 }

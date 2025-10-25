@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { TextHoverEffect } from '@/components/ui/text-hover-effect'
+import { TextHoverEffect } from '@/components/text/text-hover-effect'
 
 const links = [
     {
@@ -23,7 +23,7 @@ const links = [
 
 export default function FooterSection() {
     return (
-        <footer className="relative py-16 md:py-32 overflow-hidden font-sans">
+        <footer className="relative py-16 md:py-32 overflow-visible font-sans">
             {/* Sky blue gradient background */}
             <div
                 className="absolute inset-x-0 top-0 h-full pointer-events-none -z-10"
@@ -65,8 +65,12 @@ export default function FooterSection() {
                 } as React.CSSProperties}
             />
             <div className="mx-auto max-w-5xl px-6 relative z-10">
-                <div className="h-24 w-full max-w-2xl mx-auto mb-8">
-                    <TextHoverEffect text="Spark Service" />
+                <div className="w-full mb-8 flex items-center justify-center">
+                    <TextHoverEffect
+                        text="Spark"
+                        duration={0.1}
+                        className="mx-auto w-[90vw] max-w-4xl h-[110px] sm:h-[130px] md:h-[150px] lg:h-[170px] scale-90 sm:scale-100"
+                    />
                 </div>
 
                 <div className="my-8 flex flex-wrap justify-center gap-6 text-sm font-bold">

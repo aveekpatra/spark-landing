@@ -61,7 +61,7 @@ export default function FAQsTwo() {
                     <p className="text-muted-foreground mt-6 px-8">
                         Ne najdete odgovora na vaše vprašanje? Kontaktirajte našo{' '}
                         <Link
-                            href="#contact"
+                            href="#kontakt"
                             className="font-sans text-primary font-medium hover:underline">
                             podporo
                         </Link>
