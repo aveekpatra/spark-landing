@@ -12,20 +12,20 @@ export default function Features() {
 
     const images = {
         'item-1': {
-            image: '/charts.png',
-            alt: 'Database visualization',
+            image: '/mydesk.png',
+            alt: 'Computer service workspace',
         },
         'item-2': {
-            image: '/music.png',
-            alt: 'Security authentication',
+            image: '/window.svg',
+            alt: 'Programming development',
         },
         'item-3': {
-            image: '/mail2.png',
-            alt: 'Identity management',
+            image: '/globe.svg',
+            alt: 'Website development',
         },
         'item-4': {
-            image: '/payments.png',
-            alt: 'Analytics dashboard',
+            image: '/next.svg',
+            alt: 'Application development',
         },
     }
 
