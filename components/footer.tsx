@@ -1,45 +1,75 @@
-import { Logo } from '@/components/logo'
 import Link from 'next/link'
+import React from 'react'
+import { TextHoverEffect } from '@/components/ui/text-hover-effect'
 
 const links = [
     {
-        title: 'Features',
-        href: '#',
+        title: 'Domov',
+        href: '#domov',
     },
     {
-        title: 'Solution',
-        href: '#',
+        title: 'O nas',
+        href: '#o-nas',
     },
     {
-        title: 'Customers',
-        href: '#',
+        title: 'Storitve',
+        href: '#storitve',
     },
     {
-        title: 'Pricing',
-        href: '#',
-    },
-    {
-        title: 'Help',
-        href: '#',
-    },
-    {
-        title: 'About',
-        href: '#',
+        title: 'Kontakt',
+        href: '#kontakt',
     },
 ]
 
 export default function FooterSection() {
     return (
-        <footer className="py-16 md:py-32">
-            <div className="mx-auto max-w-5xl px-6">
-                <Link
-                    href="/"
-                    aria-label="go home"
-                    className="mx-auto block size-fit">
-                    <Logo />
-                </Link>
+        <footer className="relative py-16 md:py-32 overflow-hidden font-sans">
+            {/* Sky blue gradient background */}
+            <div
+                className="absolute inset-x-0 top-0 h-full pointer-events-none -z-10"
+                style={{
+                    background: `linear-gradient(
+                        to top,
+                        #87CEEB 0%,
+                        #ADD8E6 15%,
+                        #B0E0E6 25%,
+                        #C0E8F0 35%,
+                        #D0F0FA 45%,
+                        #E0F6FF 55%,
+                        #F0FAFF 65%,
+                        rgba(240, 248, 255, 0.8) 75%,
+                        rgba(248, 252, 255, 0.6) 85%,
+                        rgba(255, 255, 255, 0.3) 95%,
+                        transparent 100%
+                    )`
+                } as React.CSSProperties}
+            />
+            {/* Sky blue gradient background for dark mode */}
+            <div
+                className="absolute inset-x-0 top-0 h-full pointer-events-none -z-10 dark:block hidden"
+                style={{
+                    background: `linear-gradient(
+                        to top,
+                        #4682B4 0%,
+                        #5F9EA0 15%,
+                        #6495ED 25%,
+                        #7B68EE 35%,
+                        #87CEEB 45%,
+                        #B0C4DE 55%,
+                        #D3D3D3 65%,
+                        rgba(176, 196, 222, 0.6) 75%,
+                        rgba(211, 211, 211, 0.4) 85%,
+                        rgba(220, 220, 220, 0.2) 95%,
+                        transparent 100%
+                    )`
+                } as React.CSSProperties}
+            />
+            <div className="mx-auto max-w-5xl px-6 relative z-10">
+                <div className="h-24 w-full max-w-2xl mx-auto mb-8">
+                    <TextHoverEffect text="Spark Service" />
+                </div>
 
-                <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
+                <div className="my-8 flex flex-wrap justify-center gap-6 text-sm font-bold">
                     {links.map((link, index) => (
                         <Link
                             key={index}
@@ -51,41 +81,7 @@ export default function FooterSection() {
                 </div>
                 <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
                     <Link
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="X/Twitter"
-                        className="text-muted-foreground hover:text-primary block">
-                        <svg
-                            className="size-6"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="1em"
-                            height="1em"
-                            viewBox="0 0 24 24">
-                            <path
-                                fill="currentColor"
-                                d="M10.488 14.651L15.25 21h7l-7.858-10.478L20.93 3h-2.65l-5.117 5.886L8.75 3h-7l7.51 10.015L2.32 21h2.65zM16.25 19L5.75 5h2l10.5 14z"></path>
-                        </svg>
-                    </Link>
-                    <Link
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="LinkedIn"
-                        className="text-muted-foreground hover:text-primary block">
-                        <svg
-                            className="size-6"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="1em"
-                            height="1em"
-                            viewBox="0 0 24 24">
-                            <path
-                                fill="currentColor"
-                                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"></path>
-                        </svg>
-                    </Link>
-                    <Link
-                        href="#"
+                        href="https://www.facebook.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Facebook"
@@ -102,29 +98,7 @@ export default function FooterSection() {
                         </svg>
                     </Link>
                     <Link
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Threads"
-                        className="text-muted-foreground hover:text-primary block">
-                        <svg
-                            className="size-6"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="1em"
-                            height="1em"
-                            viewBox="0 0 24 24">
-                            <path
-                                fill="none"
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="1.5"
-                                d="M19.25 8.505c-1.577-5.867-7-5.5-7-5.5s-7.5-.5-7.5 8.995s7.5 8.996 7.5 8.996s4.458.296 6.5-3.918c.667-1.858.5-5.573-6-5.573c0 0-3 0-3 2.5c0 .976 1 2 2.5 2s3.171-1.027 3.5-3c1-6-4.5-6.5-6-4"
-                                color="currentColor"></path>
-                        </svg>
-                    </Link>
-                    <Link
-                        href="#"
+                        href="https://www.instagram.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Instagram"
@@ -141,10 +115,8 @@ export default function FooterSection() {
                         </svg>
                     </Link>
                     <Link
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="TikTok"
+                        href="mailto:info@sparkservice.si"
+                        aria-label="Email"
                         className="text-muted-foreground hover:text-primary block">
                         <svg
                             className="size-6"
@@ -154,11 +126,17 @@ export default function FooterSection() {
                             viewBox="0 0 24 24">
                             <path
                                 fill="currentColor"
-                                d="M16.6 5.82s.51.5 0 0A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48"></path>
+                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4l-8 5l-8-5V6l8 5l8-5z"></path>
                         </svg>
                     </Link>
                 </div>
-                <span className="text-muted-foreground block text-center text-sm"> © {new Date().getFullYear()} Tailark, All rights reserved</span>
+                <div className="text-center space-y-2 font-bold">
+                    <p className="text-muted-foreground text-sm">© {new Date().getFullYear()}</p>
+                    <p className="text-muted-foreground text-sm">Računalniški servis • Programiranje • Spletne strani • Aplikacije</p>
+                    <p className="text-muted-foreground text-sm">info@sparkservice.si | 070 450 996</p>
+                    <p className="text-muted-foreground text-sm">Kranj, Slovenija</p>
+                    <p className="text-muted-foreground text-sm font-medium">IT rešitve na enem mestu.</p>
+                </div>
             </div>
         </footer>
     )

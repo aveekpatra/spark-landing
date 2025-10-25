@@ -7,28 +7,28 @@ export default function FAQsTwo() {
     const faqItems = [
         {
             id: 'item-1',
-            question: 'How long does shipping take?',
-            answer: 'Standard shipping takes 3-5 business days, depending on your location. Express shipping options are available at checkout for 1-2 business day delivery.',
+            question: 'Koliko časa traja popravilo računalnika?',
+            answer: 'Čas popravila je odvisen od težave. Enostavne popravke (čiščenje, namestitev programov) opravimo v 1-2 dneh, kompleksnejše težave pa lahko trajajo 3-5 dni. Vedno vas obvestimo o predvidenem času.',
         },
         {
             id: 'item-2',
-            question: 'What payment methods do you accept?',
-            answer: 'We accept all major credit cards (Visa, Mastercard, American Express), PayPal, Apple Pay, and Google Pay. For enterprise customers, we also offer invoicing options.',
+            question: 'Ali ponujate garancijo na storitve?',
+            answer: 'Da, na vse naše storitve dajemo garancijo. Za računalniški servis 30 dni, za spletne strani 6 mesecev brezplačne podpore, za aplikacije pa 3 mesece popravkov napak.',
         },
         {
             id: 'item-3',
-            question: 'Can I change or cancel my order?',
-            answer: 'You can modify or cancel your order within 1 hour of placing it. After this window, please contact our customer support team who will assist you with any changes.',
+            question: 'Koliko stane izdelava spletne strani?',
+            answer: 'Cena je odvisna od zahtevnosti projekta. Enostavna predstavitvena stran stane od 300€, kompleksnejše spletne trgovine pa od 800€. Vedno pripravimo brezplačen predračun.',
         },
         {
             id: 'item-4',
-            question: 'Do you ship internationally?',
-            answer: "Yes, we ship to over 50 countries worldwide. International shipping typically takes 7-14 business days. Additional customs fees may apply depending on your country's import regulations.",
+            question: 'Ali nudite tudi vzdrževanje spletnih strani?',
+            answer: 'Seveda! Ponujamo redne posodobitve, varnostne kopije, optimizacijo hitrosti in tehnično podporo. Vzdrževanje lahko dogovorimo mesečno ali po potrebi.',
         },
         {
             id: 'item-5',
-            question: 'What is your return policy?',
-            answer: 'We offer a 30-day return policy for most items. Products must be in original condition with tags attached. Some specialty items may have different return terms, which will be noted on the product page.',
+            question: 'Kako poteka razvoj aplikacije?',
+            answer: 'Proces začnemo z analizo potreb, nato pripravimo dizajn in prototip. Sledi razvoj, testiranje in objava. Ves čas vas obveščamo o napredku in vključujemo v odločitve.',
         },
     ]
 
@@ -36,8 +36,8 @@ export default function FAQsTwo() {
         <section className="py-16 md:py-24">
             <div className="mx-auto max-w-5xl px-4 md:px-6">
                 <div className="mx-auto max-w-xl text-center">
-                    <h2 className="text-balance text-3xl font-bold md:text-4xl lg:text-5xl">Frequently Asked Questions</h2>
-                    <p className="text-muted-foreground mt-4 text-balance">Discover quick and comprehensive answers to common questions about our platform, services, and features.</p>
+                    <h2 className="font-sans text-balance text-3xl font-bold md:text-4xl lg:text-5xl">Pogosto zastavljena vprašanja</h2>
+                    <p className="text-muted-foreground mt-4 text-balance">Odgovori na najpogostejša vprašanja o naših storitvah, cenah in načinu dela.</p>
                 </div>
 
                 <div className="mx-auto mt-12 max-w-xl">
@@ -59,11 +59,11 @@ export default function FAQsTwo() {
                     </Accordion>
 
                     <p className="text-muted-foreground mt-6 px-8">
-                        Can't find what you're looking for? Contact our{' '}
+                        Ne najdete odgovora na vaše vprašanje? Kontaktirajte našo{' '}
                         <Link
-                            href="#"
-                            className="text-primary font-medium hover:underline">
-                            customer support team
+                            href="#contact"
+                            className="font-sans text-primary font-medium hover:underline">
+                            podporo
                         </Link>
                     </p>
                 </div>

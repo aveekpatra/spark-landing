@@ -1,6 +1,6 @@
 'use client'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
-import { ChartBarIncreasingIcon, Database, Fingerprint, IdCard } from 'lucide-react'
+import { Monitor, Code, Globe, Smartphone } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
@@ -34,8 +34,8 @@ export default function Features() {
             <div className="bg-linear-to-b absolute inset-0 -z-10 sm:inset-6 sm:rounded-b-3xl dark:block dark:to-[color-mix(in_oklab,var(--color-zinc-900)_75%,var(--color-background))]"></div>
             <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16 lg:space-y-20 dark:[--color-border:color-mix(in_oklab,var(--color-white)_10%,transparent)]">
                 <div className="relative z-10 mx-auto max-w-2xl space-y-6 text-center">
-                    <h2 className="text-balance text-4xl font-semibold lg:text-6xl">The foundation for AI</h2>
-                    <p>Lyra is evolving to be more than just the models. It supports an entire to the APIs and platforms helping developers and businesses innovate.</p>
+                    <h2 className="font-sans text-balance text-4xl font-semibold lg:text-6xl">Naše storitve</h2>
+                    <p>Spark Service ponuja celovite IT rešitve - od računalniškega servisa do razvoja spletnih strani in aplikacij. Vse na enem mestu.</p>
                 </div>
 
                 <div className="grid gap-12 sm:px-12 md:grid-cols-2 lg:gap-20 lg:px-0">
@@ -47,38 +47,38 @@ export default function Features() {
                         <AccordionItem value="item-1">
                             <AccordionTrigger>
                                 <div className="flex items-center gap-2 text-base">
-                                    <Database className="size-4" />
-                                    Database Visualization
+                                    <Monitor className="size-4" />
+                                    Računalniški servis
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent>Lyra is evolving to be more than just the models. It supports an entire to the APIs and platforms helping developers and businesses innovate.</AccordionContent>
+                            <AccordionContent>Popravila, čiščenje, diagnostika in reševanje podatkov. Poskrbimo za vaš računalnik in ga pripravimo za nemoteno delovanje.</AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-2">
                             <AccordionTrigger>
                                 <div className="flex items-center gap-2 text-base">
-                                    <Fingerprint className="size-4" />
-                                    Advanced Authentication
+                                    <Code className="size-4" />
+                                    Programiranje
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent>Lyra is evolving to be more than just the models. It supports an entire to the APIs and platforms helping developers and businesses innovate.</AccordionContent>
+                            <AccordionContent>Skripte, avtomatizacija in razvoj po meri. Ustvarjamo programske rešitve, ki olajšajo vaše vsakodnevne naloge.</AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-3">
                             <AccordionTrigger>
                                 <div className="flex items-center gap-2 text-base">
-                                    <IdCard className="size-4" />
-                                    Identity Management
+                                    <Globe className="size-4" />
+                                    Spletne strani
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent>Lyra is evolving to be more than just the models. It supports an entire to the APIs and platforms helping developers and businesses innovate.</AccordionContent>
+                            <AccordionContent>WordPress, SEO, hitrost in dizajn. Izdelujemo moderne spletne strani, ki so hitro naložene in optimizirane za iskalnike.</AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-4">
                             <AccordionTrigger>
                                 <div className="flex items-center gap-2 text-base">
-                                    <ChartBarIncreasingIcon className="size-4" />
-                                    Analytics Dashboard
+                                    <Smartphone className="size-4" />
+                                    Aplikacije
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent>Lyra is evolving to be more than just the models. It supports an entire to the APIs and platforms helping developers and businesses innovate.</AccordionContent>
+                            <AccordionContent>Mobilne in spletne aplikacije z odličnim UX/UI. Razvijamo uporabniško prijazne aplikacije za različne platforme.</AccordionContent>
                         </AccordionItem>
                     </Accordion>
 

@@ -13,76 +13,76 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
     {
-        name: 'Jonathan Yombo',
-        role: 'Software Engineer',
+        name: 'Marko Novak',
+        role: 'Lastnik podjetja',
         image: 'https://randomuser.me/api/portraits/men/1.jpg',
-        quote: 'Tailus is really extraordinary and very practical, no need to break your head. A real gold mine.',
+        quote: 'Spark Service mi je rešil računalnik v rekordnem času. Profesionalna storitev in odličen pristop!',
     },
     {
-        name: 'Yves Kalume',
-        role: 'GDE - Android',
-        image: 'https://randomuser.me/api/portraits/men/6.jpg',
-        quote: 'With no experience in webdesign I just redesigned my entire website in a few minutes with tailwindcss thanks to Tailus.',
+        name: 'Ana Kovač',
+        role: 'Freelancer',
+        image: 'https://randomuser.me/api/portraits/women/6.jpg',
+        quote: 'Potrebovala sem spletno stran za svoj posel. Ekipa Spark Service je naredila čudovito stran, ki je hitro naložena in SEO optimizirana.',
     },
     {
-        name: 'Yucel Faruksahan',
-        role: 'Tailkits Creator',
+        name: 'Janez Kranjski',
+        role: 'IT Manager',
         image: 'https://randomuser.me/api/portraits/men/7.jpg',
-        quote: 'Great work on tailfolio template. This is one of the best personal website that I have seen so far :)',
+        quote: 'Avtomatizacija procesov, ki so jo naredili, nam je prihranila ogromno časa. Priporočam vsem!',
     },
     {
-        name: 'Anonymous author',
-        role: 'Doing something',
-        image: 'https://randomuser.me/api/portraits/men/8.jpg',
-        quote: 'I am really new to Tailwind and I want to give a go to make some page on my own. I searched a lot of hero pages and blocks online. However, most of them are not giving me a clear view or needed some HTML/CSS coding background to make some changes from the original or too expensive to have. I downloaded the one of Tailus template which is very clear to understand at the start and you could modify the codes/blocks to fit perfectly on your purpose of the page.',
+        name: 'Petra Slovenka',
+        role: 'Podjetnica',
+        image: 'https://randomuser.me/api/portraits/women/8.jpg',
+        quote: 'Mobilna aplikacija za moj salon je presegla vsa pričakovanja. Stranke so navdušene nad enostavnostjo uporabe.',
     },
     {
-        name: 'Shekinah Tshiokufila',
-        role: 'Senior Software Engineer',
+        name: 'Luka Tehnolog',
+        role: 'Razvijalec',
         image: 'https://randomuser.me/api/portraits/men/4.jpg',
-        quote: 'Tailus is redefining the standard of web design, with these blocks it provides an easy and efficient way for those who love beauty but may lack the time to implement it. I can only recommend this incredible wonder.',
+        quote: 'Spark Service ponuja vse IT rešitve na enem mestu. Od popravila računalnika do razvoja aplikacij - vse je na najvišji ravni.',
     },
     {
-        name: 'Oketa Fred',
-        role: 'Fullstack Developer',
-        image: 'https://randomuser.me/api/portraits/men/2.jpg',
-        quote: 'I absolutely love Tailus! The component blocks are beautifully designed and easy to use, which makes creating a great-looking website a breeze.',
+        name: 'Maja Digitalna',
+        role: 'Marketing Manager',
+        image: 'https://randomuser.me/api/portraits/women/2.jpg',
+        quote: 'WordPress stran, ki so jo ustvarili, je popolnoma odzivna in enostavna za upravljanje. Odličen dizajn!',
     },
     {
-        name: 'Zeki',
-        role: 'Founder of ChatExtend',
+        name: 'Tomaž Inovator',
+        role: 'Startup Founder',
         image: 'https://randomuser.me/api/portraits/men/5.jpg',
-        quote: "Using TailsUI has been like unlocking a secret design superpower. It's the perfect fusion of simplicity and versatility, enabling us to create UIs that are as stunning as they are user-friendly.",
+        quote: 'Potreboval sem hitro in zanesljivo tehnično podporo. Spark Service je postal moj glavni partner za vse IT zadeve.',
     },
     {
-        name: 'Joseph Kitheka',
-        role: 'Fullstack Developer',
-        image: 'https://randomuser.me/api/portraits/men/9.jpg',
-        quote: 'Tailus has transformed the way I develop web applications. Their extensive collection of UI components, blocks, and templates has significantly accelerated my workflow. The flexibility to customize every aspect allows me to create unique user experiences. Tailus is a game-changer for modern web development!',
+        name: 'Nina Kreativna',
+        role: 'Oblikovalka',
+        image: 'https://randomuser.me/api/portraits/women/9.jpg',
+        quote: 'UX/UI dizajn aplikacije je fantastičen. Uporabniki so navdušeni nad intuitivnostjo in lepoto vmesnika.',
     },
     {
-        name: 'Khatab Wedaa',
-        role: 'MerakiUI Creator',
+        name: 'Miha Podjetnik',
+        role: 'CEO',
         image: 'https://randomuser.me/api/portraits/men/10.jpg',
-        quote: "Tailus is an elegant, clean, and responsive tailwind css components it's very helpful to start fast with your project.",
+        quote: 'Spark Service je rešil naše IT težave in nam omogočil, da se osredotočimo na naš glavni posel. Hvala!',
     },
     {
-        name: 'Rodrigo Aguilar',
-        role: 'TailwindAwesome Creator',
-        image: 'https://randomuser.me/api/portraits/men/11.jpg',
-        quote: 'I love Tailus ❤️. The component blocks are well-structured, simple to use, and beautifully designed. It makes it really easy to have a good-looking website in no time.',
+        name: 'Sara Moderna',
+        role: 'Freelance Writer',
+        image: 'https://randomuser.me/api/portraits/women/11.jpg',
+        quote: 'Diagnostika in čiščenje računalnika sta bila opravljena strokovno. Računalnik zdaj deluje kot nov!',
     },
     {
-        name: 'Eric Ampire',
-        role: 'Mobile Engineer at @BRPNews • @GoogleDevExpert for Android',
+        name: 'David Tehnični',
+        role: 'System Administrator',
         image: 'https://randomuser.me/api/portraits/men/12.jpg',
-        quote: 'Tailus templates are the perfect solution for anyone who wants to create a beautiful and functional website without any web design experience. The templates are easy to use, customizable, and responsive, and the support team is always available to help. I highly recommend Tailus templates to anyone who is looking to create a website.',
+        quote: 'Reševanje podatkov z okvarjenega diska je bilo uspešno. Profesionalen pristop in hitra rešitev problema.',
     },
     {
-        name: 'Roland Tubonge',
-        role: 'Software Engineer',
-        image: 'https://randomuser.me/api/portraits/men/13.jpg',
-        quote: 'Tailus is so well designed that even with a very poor knowledge of web design you can do miracles. Let yourself be seduced!',
+        name: 'Eva Uspešna',
+        role: 'Business Owner',
+        image: 'https://randomuser.me/api/portraits/women/13.jpg',
+        quote: 'Spark Service je zanesljiv partner za vse digitalne rešitve. Priporočam vsem, ki iščejo kakovostne IT storitve.',
     },
 ]
 
@@ -118,7 +118,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
             </Avatar>
 
             <div>
-                <h3 className="font-medium">{testimonial.name}</h3>
+                <h3 className="font-sans font-medium">{testimonial.name}</h3>
                 <span className="text-muted-foreground block text-sm tracking-wide">{testimonial.role}</span>
                 <blockquote className="mt-3">
                     <p className="text-gray-700 dark:text-gray-300">{testimonial.quote}</p>
@@ -134,8 +134,8 @@ export default function WallOfLoveSection() {
             <div className="py-16 md:py-32">
                 <div className="mx-auto max-w-6xl px-6">
                     <div className="text-center">
-                        <h2 className="text-3xl font-semibold">Loved by the Community</h2>
-                        <p className="mt-6">Harum quae dolore orrupti aut temporibus ariatur.</p>
+                        <h2 className="font-sans text-3xl font-semibold">Zadovoljni stranki</h2>
+                        <p className="mt-6">Mnenja naših strank o kakovosti storitev Spark Service.</p>
                     </div>
                     <div className="mt-8 grid gap-3 sm:grid-cols-2 md:mt-12 lg:grid-cols-3 overflow-hidden">
                         {scrollingChunks.map((chunk, chunkIndex) => {

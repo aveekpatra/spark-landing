@@ -118,7 +118,78 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient-smooth {
+  0% {
+    background-position: 0% 0%;
+    transform: scale(1) rotate(0deg);
+  }
+  20% {
+    background-position: 80% 20%;
+    transform: scale(1.02) rotate(1deg);
+  }
+  40% {
+    background-position: 100% 60%;
+    transform: scale(0.98) rotate(-0.5deg);
+  }
+  60% {
+    background-position: 40% 100%;
+    transform: scale(1.01) rotate(0.8deg);
+  }
+  80% {
+    background-position: 20% 80%;
+    transform: scale(0.99) rotate(-0.3deg);
+  }
+  100% {
+    background-position: 0% 0%;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes gradient-fluid {
+  0% {
+    background-position: 0% 50%;
+    filter: hue-rotate(0deg) saturate(1);
+  }
+  16.66% {
+    background-position: 30% 20%;
+    filter: hue-rotate(15deg) saturate(1.1);
+  }
+  33.33% {
+    background-position: 70% 80%;
+    filter: hue-rotate(-10deg) saturate(0.9);
+  }
+  50% {
+    background-position: 100% 30%;
+    filter: hue-rotate(20deg) saturate(1.2);
+  }
+  66.66% {
+    background-position: 60% 90%;
+    filter: hue-rotate(-5deg) saturate(0.95);
+  }
+  83.33% {
+    background-position: 20% 10%;
+    filter: hue-rotate(10deg) saturate(1.05);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: hue-rotate(0deg) saturate(1);
   }
 }
