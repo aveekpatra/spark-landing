@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import HeroSection from "@/components/hero-section";
 import ContentSection from "@/components/content-1";
 import Features from "@/components/services";
@@ -33,3 +34,9 @@ export default function Home() {
     </main>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Spark Service — IT rešitve na enem mestu",
+  description:
+    "Računalniški servis, programiranje, spletne strani in aplikacije. IT rešitve na enem mestu.",
+};

@@ -50,74 +50,13 @@ export default function HeroSection() {
                     <div className="relative pt-16 md:pt-24">
                         {/* Sky blue gradient background */}
                         <div
-                            className="absolute inset-x-0 top-0 h-full pointer-events-none -z-10"
-                            style={{
-                                background: `linear-gradient(
-                                    to bottom,
-                                    #4A90E2 0%,
-                                    #5BA0F2 10%,
-                                    #6BB6FF 20%,
-                                    #87CEEB 35%,
-                                    #A0D8F0 50%,
-                                    #B8E6F5 65%,
-                                    #D0F0FA 80%,
-                                    rgba(240, 248, 255, 0.6) 90%,
-                                    transparent 100%
-                                )`
-                            } as React.CSSProperties}
+                            className="absolute inset-x-0 top-0 h-full pointer-events-none -z-10 sky-gradient-light"
                         />
                         {/* Sky blue gradient background for dark mode */}
                         <div
-                            className="absolute inset-x-0 top-0 h-full pointer-events-none -z-10 dark:block hidden"
-                            style={{
-                                background: `linear-gradient(
-                                    to bottom,
-                                    #2E5984 0%,
-                                    #3A6B94 10%,
-                                    #4682B4 20%,
-                                    #5F9EA0 35%,
-                                    #6495ED 50%,
-                                    #87CEEB 65%,
-                                    #B0C4DE 80%,
-                                    rgba(176, 196, 222, 0.4) 90%,
-                                    transparent 100%
-                                )`
-                            } as React.CSSProperties}
+                            className="absolute inset-x-0 top-0 h-full pointer-events-none -z-10 dark:block hidden sky-gradient-dark"
                         />
-                        <AnimatedGroup
-                            variants={{
-                                container: {
-                                    visible: {
-                                        transition: {
-                                            delayChildren: 1,
-                                        },
-                                    },
-                                },
-                                item: {
-                                    hidden: {
-                                        opacity: 0,
-                                        y: 20,
-                                    },
-                                    visible: {
-                                        opacity: 1,
-                                        y: 0,
-                                        transition: {
-                                            type: 'spring',
-                                            bounce: 0.3,
-                                            duration: 2,
-                                        },
-                                    },
-                                },
-                            }}
-                            className="mask-b-from-35% mask-b-to-90% absolute inset-0 top-56 -z-20 lg:top-32">
-                            <Image
-                                src="https://ik.imagekit.io/lrigu76hy/tailark/night-background.jpg?updatedAt=1745733451120"
-                                alt="background"
-                                className="hidden size-full dark:block"
-                                width="3276"
-                                height="4095"
-                            />
-                        </AnimatedGroup>
+
 
                         <div
                             aria-hidden
@@ -130,12 +69,9 @@ export default function HeroSection() {
                                     preset="fade-in-blur"
                                     speedSegment={0.3}
                                     as="h1"
-                                    className="font-sans mx-auto mt-6 max-w-4xl text-balance text-5xl max-md:font-semibold md:text-7xl lg:mt-12 xl:text-[5.25rem] bg-gradient-to-r from-[#025C9E] via-[#8B5CF6] to-[#025C9E] bg-clip-text text-transparent animate-gradient bg-[length:400%_400%]"
-                                    style={{
-                                        backgroundImage: 'linear-gradient(135deg, #1E3A8A 0%, #059669 15%, #0891B2 30%, #7C3AED 45%, #0D9488 60%, #1E40AF 75%, #059669 90%, #1E3A8A 100%)',
-                                        backgroundSize: '400% 400%',
-                                        animation: 'gradient-fluid 8s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite'
-                                    } as React.CSSProperties}>
+                                    per="line"
+                                    className="font-sans mx-auto mt-6 max-w-4xl text-balance leading-[1.15] text-5xl max-md:font-semibold md:text-7xl lg:mt-12 xl:text-[5.25rem]"
+                                    segmentClassName="gradient-text">
                                     Vaš zanesljiv partner za digitalne rešitve
                                 </TextEffect>
                                 <TextEffect
@@ -199,21 +135,16 @@ export default function HeroSection() {
                                 },
                                 item: transitionVariants.item,
                             }}>
-                            <div className="mask-b-from-55% relative mt-6 overflow-hidden px-2 sm:mt-8 md:mt-14">
-                                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-xs overflow-hidden rounded-xl border p-2 shadow-lg shadow-zinc-950/15 ring-1 sm:max-w-lg sm:rounded-2xl sm:p-3 md:max-w-2xl md:p-4 lg:max-w-3xl xl:max-w-4xl">
+                            <div className="mask-b-from-55% relative mt-6 overflow-hidden px-1 sm:mt-8 md:mt-14">
+                                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-xs overflow-hidden rounded-xl border p-1 shadow-lg shadow-zinc-950/15 ring-1 sm:max-w-lg sm:rounded-2xl sm:p-2 md:max-w-2xl md:p-3 lg:max-w-3xl xl:max-w-4xl">
+
                                     <Image
-                                        className="bg-background aspect-video relative hidden rounded-xl dark:block sm:aspect-[4/3] sm:rounded-2xl md:aspect-15/8"
-                                        src="/mail2.png"
+                                        className="bg-background z-2 aspect-video relative size-full object-cover rounded-xl sm:aspect-[4/3] sm:rounded-2xl md:aspect-15/8"
+                                        src="/min/mydesk1-min.png"
                                         alt="app screen"
                                         width="2700"
                                         height="1440"
-                                    />
-                                    <Image
-                                        className="z-2 border-border/25 aspect-video relative rounded-xl border dark:hidden sm:aspect-[4/3] sm:rounded-2xl md:aspect-15/8"
-                                        src="/mydesk1.png"
-                                        alt="app screen"
-                                        width="2700"
-                                        height="1440"
+                                        loading="eager"
                                     />
                                 </div>
                             </div>

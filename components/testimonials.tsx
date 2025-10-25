@@ -135,7 +135,7 @@ export default function WallOfLoveSection() {
                 <div className="mx-auto max-w-6xl px-6">
                     <div className="mx-auto max-w-2xl text-center">
                         <h2 className="font-['Comfortaa'] text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-                            Zadovoljni stranki
+                            Zadovoljne stranke
                         </h2>
                         <p className="mt-2 font-['Comfortaa'] text-lg leading-8 text-gray-600 dark:text-gray-300">
                             Mnenja naših strank o kakovosti storitev Spark Service.

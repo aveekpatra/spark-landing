@@ -94,7 +94,8 @@ export const ScheduleIllustation = ({ className, variant = 'elevated' }: Illustr
                 <Button
                     size="icon"
                     className="size-8"
-                    variant="ghost">
+                    variant="ghost"
+                    aria-label="Več možnosti">
                     <Ellipsis className="size-3" />
                 </Button>
             </div>

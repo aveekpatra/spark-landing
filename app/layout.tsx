@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
-import { Comfortaa, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import type { Metadata, Viewport } from "next"
+import Script from "next/script"
+import { Comfortaa, Geist_Mono } from "next/font/google"
+import "./globals.css"
 
 // Use Comfortaa as the global sans font, keeping the same CSS variable name
 const comfortaa = Comfortaa({
@@ -47,6 +48,9 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+  alternates: {
+    canonical: "https://sparkservice.si/",
+  },
   openGraph: {
     type: "website",
     url: "https://sparkservice.si/",
@@ -76,15 +80,6 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/logo.svg",
   },
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#87CEEB" },
-    { media: "(prefers-color-scheme: dark)", color: "#0F172A" },
-  ],
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
   referrer: "strict-origin-when-cross-origin",
   formatDetection: { telephone: false },
 };
@@ -92,15 +87,48 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${comfortaa.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="sl">
+      <body className={`${comfortaa.variable} ${geistMono.variable} antialiased`}>
         {children}
+        <Script id="ld-json" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                name: "Spark Service",
+                url: "https://sparkservice.si",
+                logo: "https://sparkservice.si/logo.svg",
+              },
+              {
+                "@type": "WebSite",
+                url: "https://sparkservice.si",
+                name: "Spark Service",
+                potentialAction: {
+                  "@type": "SearchAction",
+                  target: "https://sparkservice.si/?q={search_term_string}",
+                  "query-input": "required name=search_term_string",
+                },
+              },
+            ],
+          })}
+        </Script>
       </body>
     </html>
-  );
+  )
 }
+
+// Add viewport export (Next.js v14+)
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#87CEEB" },
+    { media: "(prefers-color-scheme: dark)", color: "#0F172A" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+};

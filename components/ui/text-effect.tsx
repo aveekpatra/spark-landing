@@ -36,6 +36,8 @@ export type TextEffectProps = {
   containerTransition?: Transition;
   segmentTransition?: Transition;
   style?: React.CSSProperties;
+  // Allow styling each animated segment/span
+  segmentClassName?: string;
 };
 
 const defaultStaggerTimes: Record<PerType, number> = {
@@ -81,7 +83,7 @@ const presetVariants: Record<
     container: defaultContainerVariants,
     item: {
       hidden: { opacity: 0, y: 20, filter: 'blur(12px)' },
-      visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
+      visible: { opacity: 1, y: 0, filter: 'none' },
       exit: { opacity: 0, y: 20, filter: 'blur(12px)' },
     },
   },
@@ -116,17 +118,19 @@ const AnimationComponent: React.FC<{
   variants: Variants;
   per: 'line' | 'word' | 'char';
   segmentWrapperClassName?: string;
-}> = React.memo(({ segment, variants, per, segmentWrapperClassName }) => {
+  // New: class name applied to each motion span segment
+  segmentClassName?: string;
+}> = React.memo(({ segment, variants, per, segmentWrapperClassName, segmentClassName }) => {
   const content =
     per === 'line' ? (
-      <motion.span variants={variants} className='block'>
+      <motion.span variants={variants} className={cn('block', segmentClassName)}>
         {segment}
       </motion.span>
     ) : per === 'word' ? (
       <motion.span
         aria-hidden='true'
         variants={variants}
-        className='inline-block whitespace-pre'
+        className={cn('inline-block whitespace-pre', segmentClassName)}
       >
         {segment}
       </motion.span>
@@ -137,7 +141,7 @@ const AnimationComponent: React.FC<{
             key={`char-${charIndex}`}
             aria-hidden='true'
             variants={variants}
-            className='inline-block whitespace-pre'
+            className={cn('inline-block whitespace-pre', segmentClassName)}
           >
             {char}
           </motion.span>
@@ -223,6 +227,7 @@ export function TextEffect({
   containerTransition,
   segmentTransition,
   style,
+  segmentClassName,
 }: TextEffectProps) {
   const segments = splitText(children, per);
   const MotionTag = motion[as as keyof typeof motion] as typeof motion.div;
@@ -285,6 +290,7 @@ export function TextEffect({
               variants={computedVariants.item}
               per={per}
               segmentWrapperClassName={segmentWrapperClassName}
+              segmentClassName={segmentClassName}
             />
           ))}
         </MotionTag>

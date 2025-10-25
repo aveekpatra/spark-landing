@@ -38,7 +38,8 @@ export default function ContactSection() {
                 <div className="h-3 border-x bg-[repeating-linear-gradient(-45deg,var(--color-border),var(--color-border)_1px,transparent_1px,transparent_6px)]"></div>
                 <form
                     action=""
-                    className="border px-4 py-12 lg:px-0 lg:py-24">
+                    className="border px-4 py-12 lg:px-0 lg:py-24"
+                    autoComplete="on">
                     <Card className="mx-auto max-w-lg p-8 sm:p-16">
                         <h3 className="text-xl font-semibold font-['Comfortaa']">Pošljite povpraševanje</h3>
                         <p className="mt-4 text-sm font-['Comfortaa']">Stopite v stik z nami! Radi bi izvedeli več o vaših potrebah in kako vam lahko pomagamo.</p>
@@ -54,6 +55,8 @@ export default function ContactSection() {
                                     <Input
                                         type="text"
                                         id="firstName"
+                                        name="given-name"
+                                        autoComplete="given-name"
                                         required
                                     />
                                 </div>
@@ -66,6 +69,8 @@ export default function ContactSection() {
                                     <Input
                                         type="text"
                                         id="lastName"
+                                        name="family-name"
+                                        autoComplete="family-name"
                                         required
                                     />
                                 </div>
@@ -79,6 +84,8 @@ export default function ContactSection() {
                                 <Input
                                     type="email"
                                     id="email"
+                                    name="email"
+                                    autoComplete="email"
                                     required
                                 />
                             </div>
@@ -91,6 +98,8 @@ export default function ContactSection() {
                                 <Input
                                     type="tel"
                                     id="phone"
+                                    name="tel"
+                                    autoComplete="tel"
                                 />
                             </div>
                             <div>
@@ -99,8 +108,8 @@ export default function ContactSection() {
                                     className="space-y-2 font-['Comfortaa']">
                                     Kaj vas zanima?
                                 </Label>
-                                <Select>
-                                    <SelectTrigger>
+                                <Select name="service">
+                                    <SelectTrigger id="service">
                                         <SelectValue placeholder="Izberite storitev" />
                                     </SelectTrigger>
                                     <SelectContent>
@@ -119,11 +128,13 @@ export default function ContactSection() {
                                 </Label>
                                 <Textarea
                                     id="msg"
+                                    name="message"
                                     rows={4}
                                     placeholder="Opišite vaše potrebe ali vprašanja..."
+                                    autoComplete="off"
                                 />
                             </div>
-                            <Button className="w-full font-['Comfortaa']">Pošlji</Button>
+                            <Button type="submit" className="w-full font-['Comfortaa']">Pošlji</Button>
                         </div>
                     </Card>
                 </form>
