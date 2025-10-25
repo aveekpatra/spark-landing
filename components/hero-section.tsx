@@ -136,7 +136,7 @@ export default function HeroSection() {
                                 item: transitionVariants.item,
                             }}>
                             <div className="mask-b-from-55% relative mt-6 overflow-hidden px-1 sm:mt-8 md:mt-14">
-                                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-xs overflow-hidden rounded-xl border p-1 shadow-lg shadow-zinc-950/15 ring-1 sm:max-w-lg sm:rounded-2xl sm:p-2 md:max-w-2xl md:p-3 lg:max-w-3xl xl:max-w-4xl">
+                                <div className="inset-shadow-2xs  dark:inset-shadow-white/20 bg-background relative mx-auto max-w-xs overflow-hidden rounded-xl border p-1 shadow-lg shadow-zinc-950/15 sm:max-w-lg sm:rounded-2xl sm:p-2 md:max-w-2xl md:p-3 lg:max-w-3xl xl:max-w-4xl">
 
                                     <Image
                                         className="bg-background z-2 aspect-video relative size-full object-cover rounded-xl sm:aspect-[4/3] sm:rounded-2xl md:aspect-15/8"
