@@ -153,11 +153,7 @@ export default function HeroSection() {
                 </section>
                 <section className="bg-background pb-12 pt-12 md:pb-24">
                     <div className="group relative m-auto max-w-5xl px-6">
-                        <div className="text-center mb-6">
-                            <p className="text-sm text-accent-foreground font-medium font-['Comfortaa']">
-                                Zaupajo nam
-                            </p>
-                        </div>
+
                         <div className="absolute inset-0 z-10 flex scale-95 items-center justify-center opacity-0 duration-500 group-hover:scale-100 group-hover:opacity-100">
                             <Link
                                 href="/"

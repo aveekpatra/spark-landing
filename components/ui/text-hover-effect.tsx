@@ -2,10 +2,10 @@
 import React from "react";
 
 export const TextHoverEffect = ({
-  text,
+  text = "Spark Service",
   duration,
 }: {
-  text: string;
+  text?: string;
   duration?: number;
   automatic?: boolean;
 }) => {

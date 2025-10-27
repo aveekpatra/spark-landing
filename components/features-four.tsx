@@ -21,8 +21,8 @@ export default function FeaturesSection() {
                                 <CodeIllustration className="w-full" />
                             </div>
                             <div className="text-center">
-                                <h3 className="text-foreground text-xl font-semibold font-['Comfortaa']">Strokovnost in izkušnje</h3>
-                                <p className="text-muted-foreground mt-4 text-balance text-lg font-['Comfortaa']">Naša ekipa ima bogate izkušnje na področju IT storitev, programiranja in spletnega razvoja. Vsak projekt obravnavamo s profesionalnostjo in strokovnim znanjem.</p>
+                                <h3 className="text-foreground text-xl font-semibold font-['Comfortaa']">Tehnična odličnost</h3>
+                                <p className="text-muted-foreground mt-4 text-balance text-lg font-['Comfortaa']">Specializiramo se za najnovejše tehnologije in pristope. Od spletnih aplikacij do sistemskega servisa - zagotavljamo rešitve, ki so tehnično napredne in prilagojene vašim potrebam.</p>
                             </div>
                         </Card>
                         <Card className="p-6">
@@ -33,8 +33,8 @@ export default function FeaturesSection() {
                                 />
                             </div>
                             <div className="text-center">
-                                <h3 className="text-foreground text-xl font-semibold font-['Comfortaa']">Celovite rešitve</h3>
-                                <p className="text-muted-foreground mt-4 text-balance text-lg font-['Comfortaa']">Ponujamo vse digitalne storitve na enem mestu - od popravila računalnikov do razvoja spletnih aplikacij. To vam prihrani čas in zagotavlja konsistentnost.</p>
+                                <h3 className="text-foreground text-xl font-semibold font-['Comfortaa']">Hitra odzivnost</h3>
+                                <p className="text-muted-foreground mt-4 text-balance text-lg font-['Comfortaa']">Razumemo, da je čas ključen. Zato zagotavljamo hitro odzivnost na vaše potrebe - od nujnih popravil do razvoja projektov. Vaš uspeh je naša prioriteta.</p>
                             </div>
                         </Card>
                     </div>
@@ -62,7 +62,7 @@ export const ScheduleIllustation = ({ className, variant = 'elevated' }: Illustr
                     size="sm"
                     className="rounded-sm">
                     <Calendar1 className="size-3" />
-                    <span className="text-sm font-medium font-['Comfortaa']">Schedule</span>
+                    <span className="text-sm font-medium font-['Comfortaa']">Rezervacija</span>
                 </Button>
                 <span className="bg-border block h-4 w-px"></span>
                 <ToggleGroup
@@ -100,7 +100,7 @@ export const ScheduleIllustation = ({ className, variant = 'elevated' }: Illustr
                 </Button>
             </div>
             <span className="font-['Comfortaa']">
-                <span className="bg-secondary text-secondary-foreground py-1 font-['Comfortaa']">Tomorrow 8:30 pm</span> is our priority.
+                <span className="bg-secondary text-secondary-foreground py-1 font-['Comfortaa']">Danes ob 14:00</span> Hitrost je naša prioriteta.
             </span>
         </div>
     )
@@ -110,10 +110,10 @@ export const CodeIllustration = ({ className }: { className?: string }) => {
     return (
         <div className={cn('[mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_50%,transparent_100%)]', className)}>
             <ul className="text-muted-foreground mx-auto w-fit font-['Comfortaa'] text-2xl font-medium">
-                {['Images', 'Variables', 'Pages', 'Components', 'Styles'].map((item, index) => (
+                {['Spletne strani', 'Aplikacije', 'Servis', 'Programiranje', 'IT svetovanje'].map((item, index) => (
                     <li
                         key={index}
-                        className={cn(index == 2 && "text-foreground before:absolute before:-translate-x-[110%] before:text-orange-500 before:content-['Import'] before:font-['Comfortaa']")}>
+                        className={cn(index == 2 && "text-foreground before:absolute before:-translate-x-[110%] before:text-orange-500 before:content-['Aktivno'] before:font-['Comfortaa']")}>
                         {item}
                     </li>
                 ))}

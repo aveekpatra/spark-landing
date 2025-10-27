@@ -67,7 +67,7 @@ export default function FooterSection() {
             <div className="mx-auto max-w-5xl px-6 relative z-10">
                 <div className="w-full mb-8 flex items-center justify-center">
                     <TextHoverEffect
-                        text="Spark"
+                        text="Spark Service"
                         duration={0.1}
                         className="mx-auto w-[90vw] max-w-4xl h-[110px] sm:h-[130px] md:h-[150px] lg:h-[170px] scale-90 sm:scale-100"
                     />
