@@ -11,25 +11,25 @@ import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 
 export default function ContactSection() {
-    const [selectedFile, setSelectedFile] = useState<File | null>(null)
+    // const [selectedFile, setSelectedFile] = useState<File | null>(null)
     const [isLoading, setIsLoading] = useState(false)
     const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null)
 
-    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const file = event.target.files?.[0]
-        if (file) {
-            setSelectedFile(file)
-        }
-    }
+    // const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    //     const file = event.target.files?.[0]
+    //     if (file) {
+    //         setSelectedFile(file)
+    //     }
+    // }
 
-    const removeFile = () => {
-        setSelectedFile(null)
-        // Reset the input value
-        const fileInput = document.getElementById('photo') as HTMLInputElement
-        if (fileInput) {
-            fileInput.value = ''
-        }
-    }
+    // const removeFile = () => {
+    //     setSelectedFile(null)
+    //     // Reset the input value
+    //     const fileInput = document.getElementById('photo') as HTMLInputElement
+    //     if (fileInput) {
+    //         fileInput.value = ''
+    //     }
+    // }
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
@@ -59,7 +59,7 @@ export default function ContactSection() {
             
             setMessage({ type: 'success', text: 'Sporočilo je bilo uspešno poslano!' })
             form.reset()
-            setSelectedFile(null)
+            // setSelectedFile(null)
         } catch (error) {
             console.error('EmailJS error:', error)
             setMessage({ type: 'error', text: 'Prišlo je do napake. Poskusite znova.' })
@@ -210,6 +210,7 @@ export default function ContactSection() {
                                     autoComplete="off"
                                 />
                             </div>
+                            {/* File upload section temporarily hidden
                             <div>
                                 <Label
                                     htmlFor="photo"
@@ -267,6 +268,7 @@ export default function ContactSection() {
                                     </p>
                                 </div>
                             </div>
+                            */}
                             <Button type="submit" className="w-full font-['Comfortaa']" disabled={isLoading}>
                                 {isLoading ? 'Pošiljam...' : 'Pošlji'}
                             </Button>
