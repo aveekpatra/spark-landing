@@ -1,3 +1,5 @@
+'use client'
+
 import { Card } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -5,8 +7,26 @@ import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import Link from 'next/link'
+import { useState } from 'react'
 
 export default function ContactSection() {
+    const [selectedFile, setSelectedFile] = useState<File | null>(null)
+
+    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0]
+        if (file) {
+            setSelectedFile(file)
+        }
+    }
+
+    const removeFile = () => {
+        setSelectedFile(null)
+        // Reset the input value
+        const fileInput = document.getElementById('photo') as HTMLInputElement
+        if (fileInput) {
+            fileInput.value = ''
+        }
+    }
     return (
         <section className="py-32">
             <div className="mx-auto max-w-4xl px-4 lg:px-0">
@@ -21,7 +41,7 @@ export default function ContactSection() {
                                 className="text-lg text-blue-600 hover:underline dark:text-blue-400 font-['Comfortaa']">
                                 info@sparkservice.si
                             </Link>
-                            <p className="mt-3 text-sm font-['Comfortaa']">070 450 996</p>
+                            <p className="mt-3 text-sm font-['Comfortaa']">068 653 596</p>
                             <p className="mt-1 text-sm text-muted-foreground font-['Comfortaa']">Kranj, Slovenija</p>
                         </div>
                     </div>
@@ -109,12 +129,18 @@ export default function ContactSection() {
                                     Kaj vas zanima?
                                 </Label>
                                 <Select name="service">
-                                    <SelectTrigger id="service">
+                                    <SelectTrigger id="service" className="w-full">
                                         <SelectValue placeholder="Izberite storitev" />
                                     </SelectTrigger>
                                     <SelectContent>
                                         <SelectItem value="website">Razvoj spletnih strani</SelectItem>
                                         <SelectItem value="app">Razvoj aplikacij</SelectItem>
+                                        <SelectItem value="programming">Programiranje & skripte</SelectItem>
+                                        <SelectItem value="ecommerce">Razvoj spletnih trgovin</SelectItem>
+                                        <SelectItem value="cgp">Izdelava CGP</SelectItem>
+                                        <SelectItem value="remote">Oddaljena pomoč</SelectItem>
+                                        <SelectItem value="computer-order">Naročilo računalnika</SelectItem>
+                                        <SelectItem value="it-consulting">IT svetovanje</SelectItem>
                                         <SelectItem value="repair">Računalniški servis</SelectItem>
                                         <SelectItem value="other">Drugo</SelectItem>
                                     </SelectContent>
@@ -133,6 +159,63 @@ export default function ContactSection() {
                                     placeholder="Opišite vaše potrebe ali vprašanja..."
                                     autoComplete="off"
                                 />
+                            </div>
+                            <div>
+                                <Label
+                                    htmlFor="photo"
+                                    className="space-y-2 font-['Comfortaa']">
+                                    Priložite fotografijo (neobvezno)
+                                </Label>
+                                <div className="space-y-3">
+                                    <div className="relative">
+                                        <input
+                                            type="file"
+                                            id="photo"
+                                            name="photo"
+                                            accept="image/*"
+                                            onChange={handleFileChange}
+                                            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                                        />
+                                        <Button
+                                             type="button"
+                                             variant="outline"
+                                             className="w-full h-10 bg-primary text-primary-foreground hover:bg-primary/90 border-0 rounded-md font-medium text-sm"
+                                         >
+                                             Naloži datoteko...
+                                         </Button>
+                                    </div>
+                                    {selectedFile && (
+                                        <div className="flex items-center justify-between p-4 bg-muted rounded-md">
+                                            <div className="flex items-center gap-3 flex-1 min-w-0">
+                                                <svg className="w-4 h-4 text-muted-foreground flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                                </svg>
+                                                <div className="flex items-center gap-2 min-w-0 flex-1">
+                                                    <span className="text-sm font-['Comfortaa'] truncate">
+                                                        {selectedFile.name}
+                                                    </span>
+                                                    <span className="text-xs text-muted-foreground whitespace-nowrap">
+                                                        ({(selectedFile.size / 1024 / 1024).toFixed(2)} MB)
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <Button
+                                                type="button"
+                                                variant="ghost"
+                                                size="sm"
+                                                onClick={removeFile}
+                                                className="h-8 w-8 p-0 hover:bg-destructive/10 hover:text-destructive flex-shrink-0 ml-3"
+                                            >
+                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                                </svg>
+                                            </Button>
+                                        </div>
+                                    )}
+                                    <p className="text-xs text-muted-foreground font-['Comfortaa']">
+                                        Podprte so slike (JPG, PNG, GIF). Maksimalna velikost: 10MB
+                                    </p>
+                                </div>
                             </div>
                             <Button type="submit" className="w-full font-['Comfortaa']">Pošlji</Button>
                         </div>

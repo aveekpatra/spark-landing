@@ -137,8 +137,9 @@ export default function FooterSection() {
                 <div className="text-center space-y-2 font-bold">
                     <p className="text-muted-foreground text-sm">© {new Date().getFullYear()}</p>
                     <p className="text-muted-foreground text-sm">Računalniški servis • Programiranje • Spletne strani • Aplikacije</p>
-                    <p className="text-muted-foreground text-sm">info@sparkservice.si | 070 450 996</p>
+                    <p className="text-muted-foreground text-sm">info@sparkservice.si | 068 653 596</p>
                     <p className="text-muted-foreground text-sm">Kranj, Slovenija</p>
+                    <p className="text-muted-foreground text-sm">Davčna številka: 93787880 • Matična številka: 9973770000</p>
                     <p className="text-muted-foreground text-sm font-medium">IT rešitve na enem mestu.</p>
                 </div>
             </div>
