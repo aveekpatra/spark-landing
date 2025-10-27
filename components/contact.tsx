@@ -8,9 +8,12 @@ import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import Link from 'next/link'
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 
 export default function ContactSection() {
     const [selectedFile, setSelectedFile] = useState<File | null>(null)
+    const [isLoading, setIsLoading] = useState(false)
+    const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null)
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0]
@@ -25,6 +28,43 @@ export default function ContactSection() {
         const fileInput = document.getElementById('photo') as HTMLInputElement
         if (fileInput) {
             fileInput.value = ''
+        }
+    }
+
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
+        setIsLoading(true)
+        setMessage(null)
+
+        const form = event.currentTarget
+        const formData = new FormData(form)
+
+        // Prepare template parameters
+        const templateParams = {
+            from_name: `${formData.get('given-name')} ${formData.get('family-name')}`,
+            from_email: formData.get('email'),
+            phone: formData.get('tel') || 'Ni podano',
+            service: formData.get('service') || 'Ni izbrano',
+            message: formData.get('message') || 'Ni sporočila',
+            to_name: 'Spark Service',
+        }
+
+        try {
+            await emailjs.send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+                templateParams,
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+            )
+            
+            setMessage({ type: 'success', text: 'Sporočilo je bilo uspešno poslano!' })
+            form.reset()
+            setSelectedFile(null)
+        } catch (error) {
+            console.error('EmailJS error:', error)
+            setMessage({ type: 'error', text: 'Prišlo je do napake. Poskusite znova.' })
+        } finally {
+            setIsLoading(false)
         }
     }
     return (
@@ -57,12 +97,22 @@ export default function ContactSection() {
 
                 <div className="h-3 border-x bg-[repeating-linear-gradient(-45deg,var(--color-border),var(--color-border)_1px,transparent_1px,transparent_6px)]"></div>
                 <form
-                    action=""
+                    onSubmit={handleSubmit}
                     className="border px-4 py-12 lg:px-0 lg:py-24"
                     autoComplete="on">
                     <Card className="mx-auto max-w-lg p-8 sm:p-16">
                         <h3 className="text-xl font-semibold font-['Comfortaa']">Pošljite povpraševanje</h3>
                         <p className="mt-4 text-sm font-['Comfortaa']">Stopite v stik z nami! Radi bi izvedeli več o vaših potrebah in kako vam lahko pomagamo.</p>
+
+                        {message && (
+                            <div className={`mt-4 p-4 rounded-md ${
+                                message.type === 'success' 
+                                    ? 'bg-green-50 text-green-800 border border-green-200' 
+                                    : 'bg-red-50 text-red-800 border border-red-200'
+                            }`}>
+                                {message.text}
+                            </div>
+                        )}
 
                         <div className="**:[&>label]:block mt-12 space-y-6 *:space-y-3">
                             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -217,7 +267,9 @@ export default function ContactSection() {
                                     </p>
                                 </div>
                             </div>
-                            <Button type="submit" className="w-full font-['Comfortaa']">Pošlji</Button>
+                            <Button type="submit" className="w-full font-['Comfortaa']" disabled={isLoading}>
+                                {isLoading ? 'Pošiljam...' : 'Pošlji'}
+                            </Button>
                         </div>
                     </Card>
                 </form>
