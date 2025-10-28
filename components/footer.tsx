@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import React from 'react'
-import { TextHoverEffect } from '@/components/text/text-hover-effect'
 
 const links = [
     {
@@ -74,11 +73,33 @@ export default function FooterSection() {
             />
             <div className="mx-auto max-w-5xl px-6 relative z-10">
                 <div className="w-full mb-8 flex items-center justify-center">
-                    <TextHoverEffect
-                        text="Spark Service"
-                        duration={0.1}
-                        className="mx-auto w-[90vw] max-w-4xl h-[110px] sm:h-[130px] md:h-[150px] lg:h-[170px] scale-90 sm:scale-100"
-                    />
+                    <div className="mx-auto w-[90vw] max-w-4xl h-[130px] sm:h-[150px] md:h-[180px] lg:h-[200px] xl:h-[220px] scale-90 sm:scale-100 flex items-center justify-center overflow-visible">
+                        <div className="relative w-full h-full flex items-center justify-center">
+                            <h1 
+                                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold absolute inset-0 flex items-center justify-center"
+                                style={{
+                                    fontFamily: 'Comfortaa, sans-serif',
+                                    WebkitTextStroke: '3px transparent',
+                                    backgroundImage: 'linear-gradient(90deg, #38BDF8 0%, #1E40AF 100%)',
+                                    WebkitBackgroundClip: 'text',
+                                    backgroundClip: 'text',
+                                    WebkitTextFillColor: 'transparent'
+                                }}
+                            >
+                                Spark Service
+                            </h1>
+                            <h1 
+                                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold relative z-10 flex items-center justify-center"
+                                style={{
+                                    fontFamily: 'Comfortaa, sans-serif',
+                                    color: '#F1FAFF',
+                                    filter: 'drop-shadow(0 0 8px rgba(232, 243, 254, 0.3))'
+                                }}
+                            >
+                                Spark Service
+                            </h1>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="my-8 flex flex-wrap justify-center gap-6 text-sm font-bold">
