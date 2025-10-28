@@ -38,32 +38,26 @@ const transitionVariants = {
 // Slideshow images representing different services
 const slideshowImages = [
     {
-        src: "/min/Coding Workspace Close-Up-min.png",
-        alt: "Software Development - Coding workspace showing programming and web development services",
+        src: "/min/mydesk1-min.png",
+        alt: "Professional Workspace - Modern desk setup showcasing our comprehensive IT services",
         width: 2700,
         height: 1440,
     },
     {
-        src: "/min/Close-Up Motherboard View-min.png", 
-        alt: "Hardware Repair - Close-up view of computer motherboard and hardware components",
+        src: "/min/mydesk-min.png",
+        alt: "Technical Workspace - Professional environment for hardware and software solutions",
         width: 2700,
         height: 1440,
     },
     {
-        src: "/min/Hand Holding Smartphone-min.png",
-        alt: "Mobile Applications - Smartphone showing mobile app development services",
+        src: "/min/Smartphone Close-Up-min.png",
+        alt: "Mobile Services - Smartphone repair and mobile application development",
         width: 2700,
         height: 1440,
     },
     {
-        src: "/min/Modern Graphics Card-min.png",
-        alt: "Computer Hardware - Modern graphics card representing hardware services and upgrades",
-        width: 2700,
-        height: 1440,
-    },
-    {
-        src: "/min/Cozy Coding Workspace-min.png",
-        alt: "Web Development - Cozy workspace environment for web application development",
+        src: "/min/Cozy Cafe Workstation-min.png",
+        alt: "Software Development - Laptop workspace for programming and web development services",
         width: 2700,
         height: 1440,
     },
