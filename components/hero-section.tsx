@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { TextEffect } from '@/components/ui/text-effect'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { HeroHeader } from './header'
+import { ImageSlideshow } from '@/components/ui/image-slideshow'
 
 const transitionVariants = {
     container: {
@@ -33,6 +34,40 @@ const transitionVariants = {
         },
     },
 }
+
+// Slideshow images representing different services
+const slideshowImages = [
+    {
+        src: "/min/Coding Workspace Close-Up-min.png",
+        alt: "Software Development - Coding workspace showing programming and web development services",
+        width: 2700,
+        height: 1440,
+    },
+    {
+        src: "/min/Close-Up Motherboard View-min.png", 
+        alt: "Hardware Repair - Close-up view of computer motherboard and hardware components",
+        width: 2700,
+        height: 1440,
+    },
+    {
+        src: "/min/Hand Holding Smartphone-min.png",
+        alt: "Mobile Applications - Smartphone showing mobile app development services",
+        width: 2700,
+        height: 1440,
+    },
+    {
+        src: "/min/Modern Graphics Card-min.png",
+        alt: "Computer Hardware - Modern graphics card representing hardware services and upgrades",
+        width: 2700,
+        height: 1440,
+    },
+    {
+        src: "/min/Cozy Coding Workspace-min.png",
+        alt: "Web Development - Cozy workspace environment for web application development",
+        width: 2700,
+        height: 1440,
+    },
+]
 
 export default function HeroSection() {
     return (
@@ -138,13 +173,11 @@ export default function HeroSection() {
                             <div className="mask-b-from-55% relative mt-6 overflow-hidden px-1 sm:mt-8 md:mt-14">
                                 <div className="inset-shadow-2xs  dark:inset-shadow-white/20 bg-background relative mx-auto max-w-xs overflow-hidden rounded-xl border p-1 shadow-lg shadow-zinc-950/15 sm:max-w-lg sm:rounded-2xl sm:p-2 md:max-w-2xl md:p-3 lg:max-w-3xl xl:max-w-4xl">
 
-                                    <Image
-                                        className="bg-background z-2 aspect-video relative size-full object-cover rounded-xl sm:aspect-[4/3] sm:rounded-2xl md:aspect-15/8"
-                                        src="/min/mydesk1-min.png"
-                                        alt="app screen"
-                                        width="2700"
-                                        height="1440"
-                                        loading="eager"
+                                    <ImageSlideshow
+                                        images={slideshowImages}
+                                        className="bg-background z-2 aspect-video relative size-full sm:aspect-[4/3] md:aspect-15/8"
+                                        autoPlayInterval={5000}
+                                        showIndicators={true}
                                     />
                                 </div>
                             </div>
