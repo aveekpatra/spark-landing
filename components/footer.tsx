@@ -19,6 +19,14 @@ const links = [
         title: 'Kontakt',
         href: '#kontakt',
     },
+    {
+        title: 'Zasebnost',
+        href: '/zasebnost',
+    },
+    {
+        title: 'Pogoji uporabe',
+        href: '/pogoji-uporabe',
+    },
 ]
 
 export default function FooterSection() {

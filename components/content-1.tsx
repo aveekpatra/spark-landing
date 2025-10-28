@@ -25,25 +25,25 @@ export default function ContentSection() {
 
                     <div className="relative space-y-4">
                         <p className="text-muted-foreground font-['Comfortaa']">
-                            Spark Service je v razvoju rastoče podjetje, ki združuje računalniške servise, programiranje, izdelavo spletnih strani in aplikacij.
+                            Spark Service je dinamično podjetje, specializirano za celovite IT storitve, ki obsegajo sistemsko podporo, razvoj programskih rešitev ter izdelavo spletnih platform in aplikacij.
                         </p>
                         <p className="text-muted-foreground font-['Comfortaa']">
-                            Nastalo je z željo ponuditi <span className="font-['Comfortaa'] text-accent-foreground font-bold">vse digitalne rešitve na enem mestu</span>, od popravila računalnika do postavitve moderne spletne strani ali razvojne rešitve po meri.
+                            Naša vizija je zagotoviti <span className="font-['Comfortaa'] text-accent-foreground font-bold">integrirane digitalne rešitve pod eno streho</span> – od tehnične podpore in vzdrževanja do razvoja naprednih spletnih platform in prilagojenih programskih rešitev.
                         </p>
                         <p className="text-muted-foreground font-['Comfortaa']">
-                            Čeprav je projekt še v razvoju, že zdaj delamo z mislijo na kakovost, zanesljivost in jasno komunikacijo s strankami.
+                            Kot rastoče podjetje se zavezujemo k visokim standardom kakovosti, zanesljivosti in transparentni komunikaciji z našimi poslovnimi partnerji.
                         </p>
                         <p className="text-muted-foreground font-['Comfortaa']">
-                            Naš cilj je ustvariti preproste, učinkovite in trajne rešitve, ki ljudem in podjetjem olajšajo vsakdan pri uporabi tehnologije.
+                            Naš pristop temelji na razvoju skalabilnih, učinkovitih rešitev, ki optimizirajo poslovne procese in povečujejo konkurenčnost naših strank.
                         </p>
 
                         <div className="pt-6">
                             <blockquote className="border-l-4 pl-4">
-                                <p className="font-['Comfortaa']">Z vsakim korakom širimo znanje, nadgrajujemo storitve in gradimo zaupanje, da bo Spark Service postal sinonim za zanesljivo tehnično podporo in sodobne spletne rešitve.</p>
+                                <p className="font-['Comfortaa']">Kontinuirano razvijamo naše kompetence, širimo portfelj storitev in krepimo partnerstva, da postanemo vodilni ponudnik zanesljivih IT rešitev in inovativnih digitalnih platform.</p>
 
                                 <div className="mt-6 space-y-3">
                                     <cite className="font-['Comfortaa'] block font-medium">Spark Service ekipa</cite>
-                                    <p className="text-sm text-muted-foreground font-['Comfortaa']">IT rešitve na enem mestu</p>
+                                    <p className="text-sm text-muted-foreground font-['Comfortaa']">Celovite IT rešitve za poslovni uspeh</p>
                                 </div>
                             </blockquote>
                         </div>

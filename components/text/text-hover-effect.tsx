@@ -3,7 +3,7 @@
 import React from 'react';
 
 export const TextHoverEffect = ({
-  text = "spark service",
+  text = "Spark",
   className,
 }: {
   text?: string;

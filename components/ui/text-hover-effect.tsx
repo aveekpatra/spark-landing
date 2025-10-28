@@ -14,10 +14,11 @@ export const TextHoverEffect = ({
       <svg
         width="100%"
         height="100%"
-        viewBox="0 0 300 100"
+        viewBox="0 0 400 120"
         xmlns="http://www.w3.org/2000/svg"
-        className="select-none"
+        className="select-none max-w-full max-h-full"
         aria-hidden="true"
+        preserveAspectRatio="xMidYMid meet"
       >
         <defs>
           <linearGradient
@@ -37,20 +38,19 @@ export const TextHoverEffect = ({
           </linearGradient>
         </defs>
 
-        {/* Base neutral outline for readability */}
+        {/* Mobile version - show only "Spark" */}
         <text
           x="50%"
           y="50%"
           textAnchor="middle"
           dominantBaseline="middle"
           strokeWidth="0.8"
-          className="fill-transparent stroke-neutral-500 font-[helvetica] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold dark:stroke-neutral-400"
+          className="fill-transparent stroke-neutral-500 font-[helvetica] text-lg sm:hidden font-bold dark:stroke-neutral-400"
           style={{ opacity: 0.85 }}
         >
-          {text}
+          Spark
         </text>
 
-        {/* Static gradient outline (no hover/mask/animation) */}
         <text
           x="50%"
           y="50%"
@@ -58,7 +58,33 @@ export const TextHoverEffect = ({
           dominantBaseline="middle"
           stroke="url(#textGradient)"
           strokeWidth="1"
-          className="fill-transparent font-[helvetica] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold"
+          className="fill-transparent font-[helvetica] text-lg sm:hidden font-bold"
+          style={{ filter: "drop-shadow(0 0 3px rgba(0,0,0,0.06))" }}
+        >
+          Spark
+        </text>
+
+        {/* Desktop version - show full "Spark Service" */}
+        <text
+          x="50%"
+          y="50%"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          strokeWidth="0.8"
+          className="fill-transparent stroke-neutral-500 font-[helvetica] hidden sm:block text-lg md:text-4xl lg:text-5xl xl:text-6xl font-bold dark:stroke-neutral-400"
+          style={{ opacity: 0.85 }}
+        >
+          {text}
+        </text>
+
+        <text
+          x="50%"
+          y="50%"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          stroke="url(#textGradient)"
+          strokeWidth="1"
+          className="fill-transparent font-[helvetica] hidden sm:block text-lg md:text-4xl lg:text-5xl xl:text-6xl font-bold"
           style={{ filter: "drop-shadow(0 0 3px rgba(0,0,0,0.06))" }}
         >
           {text}

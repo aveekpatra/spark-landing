@@ -115,7 +115,7 @@ export default function HeroSection() {
                                         size="lg"
                                         variant="ghost"
                                         className="h-11 rounded-full px-6">
-                                        <Link href="#kontakt">
+                                        <Link href="tel:068653596">
                                             <span className="text-nowrap">Pokliči nas</span>
                                         </Link>
                                     </Button>
@@ -151,7 +151,7 @@ export default function HeroSection() {
                         </AnimatedGroup>
                     </div>
                 </section>
-                <section className="bg-background pb-12 pt-12 md:pb-24">
+                <section className="bg-background pb-8 pt-6 md:pb-24 md:pt-12">
                     <div className="group relative m-auto max-w-5xl px-6">
 
                         <div className="absolute inset-0 z-10 flex scale-95 items-center justify-center opacity-0 duration-500 group-hover:scale-100 group-hover:opacity-100">
@@ -163,33 +163,33 @@ export default function HeroSection() {
                                 <ChevronRight className="ml-1 inline-block size-3" />
                             </Link>
                         </div>
-                        <div className="group-hover:blur-xs mx-auto mt-8 grid max-w-2xl grid-cols-3 gap-x-12 gap-y-8 transition-all duration-500 group-hover:opacity-50 sm:gap-x-16 sm:gap-y-14">
+                        <div className="group-hover:blur-xs mx-auto mt-4 grid max-w-2xl grid-cols-3 gap-x-8 gap-y-6 transition-all duration-500 group-hover:opacity-50 sm:mt-8 sm:gap-x-12 sm:gap-y-8 md:gap-x-16 md:gap-y-14">
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-16 w-fit object-contain"
-                                    src="https://popravilotelefonov.si/wp-content/uploads/2022/08/kranfix.png"
+                                    className="mx-auto h-12 w-fit object-contain sm:h-16 md:h-20"
+                                    src="/companies/kranfix.png"
                                     alt="Popravilo Telefonov Logo"
-                                    height="64"
+                                    height="80"
                                     width="auto"
                                 />
                             </div>
 
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-16 w-fit object-contain"
-                                    src="https://gamenight.si/wp-content/uploads/2022/09/cropped-gamenight-logo.png"
-                                    alt="Game Night Logo"
-                                    height="64"
-                                    width="auto"
-                                />
-                            </div>
-
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-16 w-fit object-contain"
-                                    src="https://www.techtrade.si/images/thumbs/0054977.png"
+                                    className="mx-auto h-12 w-fit object-contain sm:h-16 md:h-20"
+                                    src="/companies/Techtrade.png"
                                     alt="Tech Trade Logo"
-                                    height="64"
+                                    height="80"
+                                    width="auto"
+                                />
+                            </div>
+
+                            <div className="flex">
+                                <img
+                                    className="mx-auto h-12 w-fit object-contain sm:h-16 md:h-20"
+                                    src="/companies/gamenight-logo.png"
+                                    alt="Game Night Logo"
+                                    height="80"
                                     width="auto"
                                 />
                             </div>
