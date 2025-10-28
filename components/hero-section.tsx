@@ -164,8 +164,8 @@ export default function HeroSection() {
                                 },
                                 item: transitionVariants.item,
                             }}>
-                            <div className="mask-b-from-55% relative mt-6 overflow-hidden px-1 sm:mt-8 md:mt-14">
-                                <div className="inset-shadow-2xs  dark:inset-shadow-white/20 bg-background relative mx-auto max-w-xs overflow-hidden rounded-xl border p-1 shadow-lg shadow-zinc-950/15 sm:max-w-lg sm:rounded-2xl sm:p-2 md:max-w-2xl md:p-3 lg:max-w-3xl xl:max-w-4xl">
+                            <div className="mask-b-from-55% relative mt-6 overflow-hidden px-0 sm:px-1 sm:mt-8 md:mt-14">
+                                <div className="inset-shadow-2xs  dark:inset-shadow-white/20 bg-background relative mx-auto max-w-sm overflow-hidden rounded-xl border p-0.5 shadow-lg shadow-zinc-950/15 sm:max-w-lg sm:rounded-2xl sm:p-2 md:max-w-2xl md:p-3 lg:max-w-3xl xl:max-w-4xl">
 
                                     <ImageSlideshow
                                         images={slideshowImages}
