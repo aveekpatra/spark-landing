@@ -20,7 +20,7 @@ export default function Features() {
             alt: 'Programming and development workspace',
         },
         'item-3': {
-            image: '/min/Cozy Café Workstation-min.png',
+            image: '/min/Cozy Cafe Workstation-min.png',
             alt: 'Website development workspace',
         },
         'item-4': {

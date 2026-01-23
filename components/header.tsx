@@ -34,6 +34,13 @@ export const HeroHeader = () => {
                                 href="/"
                                 aria-label="home"
                                 className="flex items-center space-x-2">
+                                <Image
+                                    src="/logo.svg"
+                                    alt="Spark Service Logo"
+                                    width={32}
+                                    height={32}
+                                    className="w-8 h-8"
+                                />
                                 <span className="font-sans text-black text-lg md:text-xl font-bold leading-none">Spark Service</span>
                             </Link>
 
