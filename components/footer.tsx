@@ -75,7 +75,7 @@ export default function FooterSection() {
                 <div className="w-full mb-8 flex items-center justify-center">
                     <div className="mx-auto w-[90vw] max-w-4xl h-[130px] sm:h-[150px] md:h-[180px] lg:h-[200px] xl:h-[220px] scale-90 sm:scale-100 flex items-center justify-center overflow-visible">
                         <div className="relative w-full h-full flex items-center justify-center">
-                            <h1 
+                            <h1
                                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold absolute inset-0 flex items-center justify-center"
                                 style={{
                                     fontFamily: 'Comfortaa, sans-serif',
@@ -88,7 +88,7 @@ export default function FooterSection() {
                             >
                                 Spark Service
                             </h1>
-                            <h1 
+                            <h1
                                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold relative z-10 flex items-center justify-center"
                                 style={{
                                     fontFamily: 'Comfortaa, sans-serif',
@@ -114,7 +114,7 @@ export default function FooterSection() {
                 </div>
                 <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
                     <Link
-                        href="https://www.facebook.com"
+                        href="https://www.facebook.com/share/1BkHCcVdgz/"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Facebook"
@@ -131,7 +131,7 @@ export default function FooterSection() {
                         </svg>
                     </Link>
                     <Link
-                        href="https://www.instagram.com"
+                        href="https://www.instagram.com/sparkservicekranj?igsh=bXExazRwM3JvYXds"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Instagram"
