@@ -78,7 +78,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/logo.svg",
+    apple: "/logo.png",
   },
   referrer: "strict-origin-when-cross-origin",
   formatDetection: { telephone: false },
@@ -101,7 +101,7 @@ export default function RootLayout({
                 "@type": "Organization",
                 name: "Pompex",
                 url: "https://pompex.si",
-                logo: "https://pompex.si/logo.svg",
+                logo: "https://pompex.si/logo.png",
               },
               {
                 "@type": "WebSite",

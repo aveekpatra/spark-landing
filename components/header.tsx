@@ -35,7 +35,7 @@ export const HeroHeader = () => {
                                 aria-label="home"
                                 className="flex items-center space-x-2">
                                 <Image
-                                    src="/logo.svg"
+                                    src="/logo.png"
                                     alt="Pompex Logo"
                                     width={32}
                                     height={32}
