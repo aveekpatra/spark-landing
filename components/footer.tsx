@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import React from 'react'
 
 const links = [
@@ -73,33 +74,13 @@ export default function FooterSection() {
             />
             <div className="mx-auto max-w-5xl px-6 relative z-10">
                 <div className="w-full mb-8 flex items-center justify-center">
-                    <div className="mx-auto w-[90vw] max-w-4xl h-[130px] sm:h-[150px] md:h-[180px] lg:h-[200px] xl:h-[220px] scale-90 sm:scale-100 flex items-center justify-center overflow-visible">
-                        <div className="relative w-full h-full flex items-center justify-center">
-                            <h1
-                                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold absolute inset-0 flex items-center justify-center"
-                                style={{
-                                    fontFamily: 'Comfortaa, sans-serif',
-                                    WebkitTextStroke: '3px transparent',
-                                    backgroundImage: 'linear-gradient(90deg, #38BDF8 0%, #1E40AF 100%)',
-                                    WebkitBackgroundClip: 'text',
-                                    backgroundClip: 'text',
-                                    WebkitTextFillColor: 'transparent'
-                                }}
-                            >
-                                Pompex
-                            </h1>
-                            <h1
-                                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold relative z-10 flex items-center justify-center"
-                                style={{
-                                    fontFamily: 'Comfortaa, sans-serif',
-                                    color: '#F1FAFF',
-                                    filter: 'drop-shadow(0 0 8px rgba(232, 243, 254, 0.3))'
-                                }}
-                            >
-                                Pompex
-                            </h1>
-                        </div>
-                    </div>
+                    <Image
+                        src="/logo.png"
+                        alt="Pompex"
+                        width={300}
+                        height={100}
+                        className="h-[80px] sm:h-[100px] md:h-[120px] lg:h-[140px] w-auto"
+                    />
                 </div>
 
                 <div className="my-8 flex flex-wrap justify-center gap-6 text-sm font-bold">
@@ -168,7 +149,7 @@ export default function FooterSection() {
                     <p className="text-muted-foreground text-sm">Računalniški servis • Programiranje • Spletne strani • Aplikacije</p>
                     <p className="text-muted-foreground text-sm">info@pompex.si | 068 653 596</p>
                     <p className="text-muted-foreground text-sm">Kranj, Slovenija</p>
-                    <p className="text-muted-foreground text-sm">Davčna številka: 93787880 • Matična številka: 9973770000</p>
+
                     <p className="text-muted-foreground text-sm font-medium">IT rešitve na enem mestu.</p>
                 </div>
             </div>
