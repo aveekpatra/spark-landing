@@ -36,12 +36,11 @@ export const HeroHeader = () => {
                                 className="flex items-center space-x-2">
                                 <Image
                                     src="/logo.png"
-                                    alt="Pompex Logo"
-                                    width={32}
-                                    height={32}
-                                    className="w-8 h-8"
+                                    alt="Pompex — IT rešitve na enem mestu"
+                                    width={120}
+                                    height={40}
+                                    className="h-8 md:h-10 w-auto"
                                 />
-                                <span className="font-sans text-black text-lg md:text-xl font-bold leading-none">Pompex</span>
                             </Link>
 
                             <button
