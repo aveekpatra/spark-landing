@@ -16,11 +16,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sparkservice.si"),
-  applicationName: "Spark Service",
+  metadataBase: new URL("https://pompex.si"),
+  applicationName: "Pompex",
   title: {
-    default: "Spark Service — IT rešitve na enem mestu",
-    template: "%s | Spark Service",
+    default: "Pompex — IT rešitve na enem mestu",
+    template: "%s | Pompex",
   },
   description:
     "Računalniški servis, programiranje, spletne strani in aplikacije. IT rešitve na enem mestu.",
@@ -32,11 +32,11 @@ export const metadata: Metadata = {
     "IT rešitve",
     "Kranj",
     "Slovenija",
-    "Spark Service",
+    "Pompex",
   ],
-  authors: [{ name: "Spark Service", url: "https://sparkservice.si" }],
-  creator: "Spark Service",
-  publisher: "Spark Service",
+  authors: [{ name: "Pompex", url: "https://pompex.si" }],
+  creator: "Pompex",
+  publisher: "Pompex",
   robots: {
     index: true,
     follow: true,
@@ -49,28 +49,28 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://sparkservice.si/",
+    canonical: "https://pompex.si/",
   },
   openGraph: {
     type: "website",
-    url: "https://sparkservice.si/",
-    title: "Spark Service — IT rešitve na enem mestu",
+    url: "https://pompex.si/",
+    title: "Pompex — IT rešitve na enem mestu",
     description:
       "Računalniški servis, programiranje, spletne strani in aplikacije.",
-    siteName: "Spark Service",
+    siteName: "Pompex",
     locale: "sl_SI",
     images: [
       {
         url: "/mydesk.png",
         width: 1200,
         height: 630,
-        alt: "Spark Service workspace",
+        alt: "Pompex workspace",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Spark Service — IT rešitve na enem mestu",
+    title: "Pompex — IT rešitve na enem mestu",
     description:
       "Računalniški servis, programiranje, spletne strani in aplikacije.",
     images: ["/mydesk.png"],
@@ -99,17 +99,17 @@ export default function RootLayout({
             "@graph": [
               {
                 "@type": "Organization",
-                name: "Spark Service",
-                url: "https://sparkservice.si",
-                logo: "https://sparkservice.si/logo.svg",
+                name: "Pompex",
+                url: "https://pompex.si",
+                logo: "https://pompex.si/logo.svg",
               },
               {
                 "@type": "WebSite",
-                url: "https://sparkservice.si",
-                name: "Spark Service",
+                url: "https://pompex.si",
+                name: "Pompex",
                 potentialAction: {
                   "@type": "SearchAction",
-                  target: "https://sparkservice.si/?q={search_term_string}",
+                  target: "https://pompex.si/?q={search_term_string}",
                   "query-input": "required name=search_term_string",
                 },
               },

@@ -36,12 +36,12 @@ export const HeroHeader = () => {
                                 className="flex items-center space-x-2">
                                 <Image
                                     src="/logo.svg"
-                                    alt="Spark Service Logo"
+                                    alt="Pompex Logo"
                                     width={32}
                                     height={32}
                                     className="w-8 h-8"
                                 />
-                                <span className="font-sans text-black text-lg md:text-xl font-bold leading-none">Spark Service</span>
+                                <span className="font-sans text-black text-lg md:text-xl font-bold leading-none">Pompex</span>
                             </Link>
 
                             <button

@@ -3,8 +3,8 @@ import { HeroHeader } from "@/components/header";
 import FooterSection from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Splošni pogoji uporabe | Spark Service",
-  description: "Splošni pogoji uporabe spletne strani in storitev podjetja Spark Service.",
+  title: "Splošni pogoji uporabe | Pompex",
+  description: "Splošni pogoji uporabe spletne strani in storitev podjetja Pompex.",
 };
 
 export default function TermsOfUsePage() {
@@ -30,7 +30,7 @@ export default function TermsOfUsePage() {
               <h2 className="text-2xl font-semibold mb-4 text-gray-900">1. Splošne določbe</h2>
               <p>
                 Ti splošni pogoji uporabe (v nadaljevanju &ldquo;Pogoji&rdquo;) urejajo dostop in uporabo spletne strani 
-                ter storitev podjetja Spark Service (v nadaljevanju &ldquo;Ponudnik&rdquo;, &ldquo;mi&rdquo;, &ldquo;naš&rdquo;). Z dostopom 
+                ter storitev podjetja Pompex (v nadaljevanju &ldquo;Ponudnik&rdquo;, &ldquo;mi&rdquo;, &ldquo;naš&rdquo;). Z dostopom 
                 do naše spletne strani ali uporabo naših storitev se strinjate s temi Pogoji.
               </p>
               <p>
@@ -41,7 +41,7 @@ export default function TermsOfUsePage() {
             <section>
               <h2 className="text-2xl font-semibold mb-4 text-gray-900">2. Definicije</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Ponudnik:</strong> Spark Service, podjetje za IT storitve</li>
+                <li><strong>Ponudnik:</strong> Pompex, podjetje za IT storitve</li>
                 <li><strong>Uporabnik:</strong> vsaka fizična ali pravna oseba, ki dostopa do naše spletne strani ali uporablja naše storitve</li>
                 <li><strong>Storitve:</strong> vse IT storitve, ki jih ponujamo, vključno z razvojem spletnih strani, aplikacij in tehničnim svetovanjem</li>
                 <li><strong>Spletna stran:</strong> naša uradna spletna stran in vsi povezani portali</li>
@@ -73,7 +73,7 @@ export default function TermsOfUsePage() {
               <p>
                 Vsa vsebina na naši spletni strani, vključno z besedili, slikami, logotipi, dizajnom in 
                 programsko kodo, je zaščitena z avtorskimi pravicami in drugimi pravicami intelektualne 
-                lastnine. Ta vsebina je last Spark Service ali naših licencedajalcev.
+                lastnine. Ta vsebina je last Pompex ali naših licencedajalcev.
               </p>
               <p>
                 Brez našega pisnega dovoljenja ne smete kopirati, reproducirati, distribuirati, objavljati 
@@ -88,7 +88,7 @@ export default function TermsOfUsePage() {
                 ki jo dovoljuje veljavno pravo, izključujemo vse garancije, izrecne ali nakazane.
               </p>
               <p>
-                Spark Service ne prevzema odgovornosti za:
+                Pompex ne prevzema odgovornosti za:
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Neposredne, posredne, naključne ali posledične škode</li>
@@ -161,8 +161,8 @@ export default function TermsOfUsePage() {
                 Za vprašanja v zvezi s temi Pogoji nas lahko kontaktirate:
               </p>
               <div className="bg-gray-50 p-4 rounded-lg">
-                <p><strong>Spark Service</strong></p>
-                <p>E-pošta: info@sparkservice.si</p>
+                <p><strong>Pompex</strong></p>
+                <p>E-pošta: info@pompex.si</p>
                 <p>Telefon: +386 XX XXX XXX</p>
               </div>
             </section>

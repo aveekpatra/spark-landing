@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://sparkservice.si/sitemap.xml
+Sitemap: https://pompex.si/sitemap.xml

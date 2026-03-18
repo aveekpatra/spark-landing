@@ -12,7 +12,7 @@ export default function FeaturesSection() {
                 <div className="mx-auto w-full max-w-5xl px-6">
                     <div className="relative z-10 mx-auto max-w-2xl space-y-6 text-center">
                         <h2 className="font-['Comfortaa'] text-balance text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Zakaj izbrati nas?</h2>
-                        <p className="font-['Comfortaa'] text-base leading-7 text-gray-600 dark:text-gray-300">Spark Service izstopa s svojo predanostjo kakovosti, hitro odzivnostjo in osebnim pristopom. Naša ekipa strokovnjakov zagotavlja celovite digitalne rešitve, ki presegajo pričakovanja strank in prinašajo dolgoročno vrednost.</p>
+                        <p className="font-['Comfortaa'] text-base leading-7 text-gray-600 dark:text-gray-300">Pompex izstopa s svojo predanostjo kakovosti, hitro odzivnostjo in osebnim pristopom. Naša ekipa strokovnjakov zagotavlja celovite digitalne rešitve, ki presegajo pričakovanja strank in prinašajo dolgoročno vrednost.</p>
                     </div>
 
                     <div className="mt-12 grid gap-4 sm:grid-cols-2 md:mt-16">

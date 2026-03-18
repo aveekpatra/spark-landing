@@ -16,12 +16,12 @@ export default function PrivacyPage() {
                 <h2 className="text-2xl font-semibold mb-4">1. Uvod</h2>
                 <p className="mb-4">
                   Ta pravilnik o zasebnosti (v nadaljevanju: "Pravilnik") je namenjen seznanitvi uporabnikov 
-                  storitev družbe Spark Service ter drugih oseb (v nadaljevanju: "posamezniki") z nameni in 
-                  podlago obdelave osebnih podatkov s strani družbe Spark Service, Kranj, Slovenija 
-                  (v nadaljevanju: "Spark Service") ter pravicami posameznikov na tem področju.
+                  storitev družbe Pompex ter drugih oseb (v nadaljevanju: "posamezniki") z nameni in 
+                  podlago obdelave osebnih podatkov s strani družbe Pompex, Kranj, Slovenija 
+                  (v nadaljevanju: "Pompex") ter pravicami posameznikov na tem področju.
                 </p>
                 <p className="mb-4">
-                  Spark Service nudi posebno skrb varnosti vaših osebnih podatkov. Vsi posredovani osebni 
+                  Pompex nudi posebno skrb varnosti vaših osebnih podatkov. Vsi posredovani osebni 
                   podatki so obravnavani zaupno in so uporabljeni le za namen, zaradi katerega so bili 
                   posredovani. Z vašimi osebnimi podatki upravljamo z največjo skrbnostjo, upoštevajoč 
                   veljavno zakonodajo in najvišje standarde njihove obravnave.
@@ -34,9 +34,9 @@ export default function PrivacyPage() {
                   Upravljavec osebnih podatkov, ki se obdelujejo v skladu s tem Pravilnikom o zasebnosti, je:
                 </p>
                 <div className="bg-muted p-4 rounded-lg mb-4">
-                  <p><strong>Spark Service</strong></p>
+                  <p><strong>Pompex</strong></p>
                   <p>Kranj, Slovenija</p>
-                  <p>E-pošta: info@sparkservice.si</p>
+                  <p>E-pošta: info@pompex.si</p>
                   <p>Telefon: 068 653 596</p>
                   <p>Davčna številka: 93787880</p>
                   <p>Matična številka: 9973770000</p>
@@ -54,7 +54,7 @@ export default function PrivacyPage() {
               <section>
                 <h2 className="text-2xl font-semibold mb-4">4. Osebni podatki, ki jih zbiramo</h2>
                 <p className="mb-4">
-                  Če ste le obiskovalec spletne strani Spark Service, o vas zbiramo podatke le z uporabo 
+                  Če ste le obiskovalec spletne strani Pompex, o vas zbiramo podatke le z uporabo 
                   piškotkov. Če ste uporabnik ali naročnik naših storitev, o vas zbiramo tudi druge osebne 
                   podatke, ki jih potrebujemo za izvajanje storitev:
                 </p>
@@ -74,7 +74,7 @@ export default function PrivacyPage() {
                 
                 <h3 className="text-xl font-medium mb-3">5.1 Obdelava na podlagi pogodbe</h3>
                 <p className="mb-4">
-                  Če ste naročili storitve, ki jih ponuja Spark Service (računalniški servis, programiranje, 
+                  Če ste naročili storitve, ki jih ponuja Pompex (računalniški servis, programiranje, 
                   izdelava spletnih strani, aplikacije), se osebni podatki zbirajo in obdelujejo za namen 
                   sklenitve pogodbe in izvrševanja pravic ter izpolnjevanja obveznosti iz pogodbenega razmerja.
                 </p>
@@ -159,7 +159,7 @@ export default function PrivacyPage() {
                   <li><strong>Pravica do preklica privolitve:</strong> kadar koli lahko prekličete privolitev</li>
                 </ul>
                 <p className="mb-4">
-                  Za uveljavljanje pravic nas kontaktirajte na info@sparkservice.si ali 068 653 596.
+                  Za uveljavljanje pravic nas kontaktirajte na info@pompex.si ali 068 653 596.
                 </p>
               </section>
 
@@ -225,8 +225,8 @@ export default function PrivacyPage() {
                   Za vsa vprašanja v zvezi z obdelavo osebnih podatkov nas lahko kontaktirate:
                 </p>
                 <div className="bg-muted p-4 rounded-lg mb-4">
-                  <p><strong>Spark Service</strong></p>
-                  <p>E-pošta: info@sparkservice.si</p>
+                  <p><strong>Pompex</strong></p>
+                  <p>E-pošta: info@pompex.si</p>
                   <p>Telefon: 068 653 596</p>
                   <p>Naslov: Kranj, Slovenija</p>
                 </div>
@@ -241,6 +241,6 @@ export default function PrivacyPage() {
 }
 
 export const metadata: Metadata = {
-  title: "Pravilnik o zasebnosti — Spark Service",
-  description: "Pravilnik o zasebnosti in varstvu osebnih podatkov družbe Spark Service v skladu z GDPR.",
+  title: "Pravilnik o zasebnosti — Pompex",
+  description: "Pravilnik o zasebnosti in varstvu osebnih podatkov družbe Pompex v skladu z GDPR.",
 };

@@ -16,13 +16,13 @@ const testimonials: Testimonial[] = [
         name: 'Marko Novak',
         role: 'Lastnik podjetja',
         image: 'https://randomuser.me/api/portraits/men/32.jpg',
-        quote: 'Spark Service mi je rešil računalnik v rekordnem času. Profesionalna storitev in odličen pristop!',
+        quote: 'Pompex mi je rešil računalnik v rekordnem času. Profesionalna storitev in odličen pristop!',
     },
     {
         name: 'Ana Kovač',
         role: 'Freelancer',
         image: 'https://randomuser.me/api/portraits/women/44.jpg',
-        quote: 'Potrebovala sem spletno stran za svoj posel. Ekipa Spark Service je naredila čudovito stran, ki je hitro naložena in SEO optimizirana.',
+        quote: 'Potrebovala sem spletno stran za svoj posel. Ekipa Pompex je naredila čudovito stran, ki je hitro naložena in SEO optimizirana.',
     },
     {
         name: 'Janez Horvat',
@@ -40,7 +40,7 @@ const testimonials: Testimonial[] = [
         name: 'Luka Krajnc',
         role: 'Razvijalec',
         image: 'https://randomuser.me/api/portraits/men/22.jpg',
-        quote: 'Spark Service ponuja vse IT rešitve na enem mestu. Od popravila računalnika do razvoja aplikacij - vse je na najvišji ravni.',
+        quote: 'Pompex ponuja vse IT rešitve na enem mestu. Od popravila računalnika do razvoja aplikacij - vse je na najvišji ravni.',
     },
     {
         name: 'Maja Vidmar',
@@ -52,7 +52,7 @@ const testimonials: Testimonial[] = [
         name: 'Tomaž Golob',
         role: 'Startup Founder',
         image: 'https://randomuser.me/api/portraits/men/45.jpg',
-        quote: 'Potreboval sem hitro in zanesljivo tehnično podporo. Spark Service je postal moj glavni partner za vse IT zadeve.',
+        quote: 'Potreboval sem hitro in zanesljivo tehnično podporo. Pompex je postal moj glavni partner za vse IT zadeve.',
     },
     {
         name: 'Nina Turk',
@@ -64,7 +64,7 @@ const testimonials: Testimonial[] = [
         name: 'Miha Podjetnik',
         role: 'CEO',
         image: 'https://randomuser.me/api/portraits/men/83.jpg',
-        quote: 'Spark Service je rešil naše IT težave in nam omogočil, da se osredotočimo na naš glavni posel. Hvala!',
+        quote: 'Pompex je rešil naše IT težave in nam omogočil, da se osredotočimo na naš glavni posel. Hvala!',
     },
     {
         name: 'Sara Božič',
@@ -82,7 +82,7 @@ const testimonials: Testimonial[] = [
         name: 'Eva Zupan',
         role: 'Business Owner',
         image: 'https://randomuser.me/api/portraits/women/67.jpg',
-        quote: 'Spark Service je zanesljiv partner za vse digitalne rešitve. Priporočam vsem, ki iščejo kakovostne IT storitve.',
+        quote: 'Pompex je zanesljiv partner za vse digitalne rešitve. Priporočam vsem, ki iščejo kakovostne IT storitve.',
     },
 ]
 
@@ -138,7 +138,7 @@ export default function WallOfLoveSection() {
                             Zadovoljne stranke
                         </h2>
                         <p className="mt-2 font-['Comfortaa'] text-lg leading-8 text-gray-600 dark:text-gray-300">
-                            Mnenja naših strank o kakovosti storitev Spark Service.
+                            Mnenja naših strank o kakovosti storitev Pompex.
                         </p>
                     </div>
                     <div className="mt-8 grid gap-3 sm:grid-cols-2 md:mt-12 lg:grid-cols-3 overflow-hidden">

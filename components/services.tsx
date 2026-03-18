@@ -35,7 +35,7 @@ export default function Features() {
             <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16 lg:space-y-20 dark:[--color-border:color-mix(in_oklab,var(--color-white)_10%,transparent)]">
                 <div className="relative z-10 mx-auto max-w-2xl space-y-6 text-center">
                     <h2 className="font-['Comfortaa'] text-balance text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Naše storitve</h2>
-                    <p className="font-['Comfortaa'] text-base leading-7 text-gray-600 dark:text-gray-300">Spark Service ponuja celovite IT rešitve - od računalniškega servisa do razvoja spletnih strani in aplikacij. Vse na enem mestu.</p>
+                    <p className="font-['Comfortaa'] text-base leading-7 text-gray-600 dark:text-gray-300">Pompex ponuja celovite IT rešitve - od računalniškega servisa do razvoja spletnih strani in aplikacij. Vse na enem mestu.</p>
                 </div>
 
                 <div className="grid gap-12 sm:px-12 md:grid-cols-2 lg:gap-20 lg:px-0">

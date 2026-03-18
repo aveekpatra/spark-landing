@@ -36,7 +36,7 @@ export default function Home() {
 }
 
 export const metadata: Metadata = {
-  title: "Spark Service — IT rešitve na enem mestu",
+  title: "Pompex — IT rešitve na enem mestu",
   description:
     "Računalniški servis, programiranje, spletne strani in aplikacije. IT rešitve na enem mestu.",
 };

@@ -86,7 +86,7 @@ export default function FooterSection() {
                                     WebkitTextFillColor: 'transparent'
                                 }}
                             >
-                                Spark Service
+                                Pompex
                             </h1>
                             <h1
                                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold relative z-10 flex items-center justify-center"
@@ -96,7 +96,7 @@ export default function FooterSection() {
                                     filter: 'drop-shadow(0 0 8px rgba(232, 243, 254, 0.3))'
                                 }}
                             >
-                                Spark Service
+                                Pompex
                             </h1>
                         </div>
                     </div>
@@ -148,7 +148,7 @@ export default function FooterSection() {
                         </svg>
                     </Link>
                     <Link
-                        href="mailto:info@sparkservice.si"
+                        href="mailto:info@pompex.si"
                         aria-label="Email"
                         className="text-muted-foreground hover:text-primary block">
                         <svg
@@ -166,7 +166,7 @@ export default function FooterSection() {
                 <div className="text-center space-y-2 font-bold">
                     <p className="text-muted-foreground text-sm">© {new Date().getFullYear()}</p>
                     <p className="text-muted-foreground text-sm">Računalniški servis • Programiranje • Spletne strani • Aplikacije</p>
-                    <p className="text-muted-foreground text-sm">info@sparkservice.si | 068 653 596</p>
+                    <p className="text-muted-foreground text-sm">info@pompex.si | 068 653 596</p>
                     <p className="text-muted-foreground text-sm">Kranj, Slovenija</p>
                     <p className="text-muted-foreground text-sm">Davčna številka: 93787880 • Matična številka: 9973770000</p>
                     <p className="text-muted-foreground text-sm font-medium">IT rešitve na enem mestu.</p>

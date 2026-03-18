@@ -46,7 +46,7 @@ export default function ContactSection() {
             phone: formData.get('tel') || 'Ni podano',
             service: formData.get('service') || 'Ni izbrano',
             message: formData.get('message') || 'Ni sporočila',
-            to_name: 'Spark Service',
+            to_name: 'Pompex',
         }
 
         try {
@@ -77,9 +77,9 @@ export default function ContactSection() {
                         <div>
                             <h2 className="font-['Comfortaa'] mb-3 text-lg font-semibold">Kontaktni podatki</h2>
                             <Link
-                                href="mailto:info@sparkservice.si"
+                                href="mailto:info@pompex.si"
                                 className="text-lg text-blue-600 hover:underline dark:text-blue-400 font-['Comfortaa']">
-                                info@sparkservice.si
+                                info@pompex.si
                             </Link>
                             <p className="mt-3 text-sm font-['Comfortaa']">068 653 596</p>
                             <p className="mt-1 text-sm text-muted-foreground font-['Comfortaa']">Kranj, Slovenija</p>
