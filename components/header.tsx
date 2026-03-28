@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Menu, X, ArrowUpRight } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 import { cn } from '@/lib/utils'
@@ -15,109 +15,90 @@ const menuItems = [
 
 export const HeroHeader = () => {
     const [menuState, setMenuState] = React.useState(false)
-    const [isScrolled, setIsScrolled] = React.useState(false)
 
-    React.useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50)
-        }
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [])
     return (
         <header>
-            <nav className="fixed z-50 w-full px-2 font-sans">
-                <div className={cn('mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12', isScrolled && 'max-w-4xl bg-background/50 rounded-full border backdrop-blur-lg lg:px-5')}>
-                    <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
-                        <div className="flex w-full justify-between lg:w-auto">
-                            <Link
-                                href="/"
-                                aria-label="home"
-                                className="flex items-center space-x-2">
+            <nav className="fixed z-50 w-full bg-[#0a0f1f]/60 backdrop-blur-2xl border-b border-white/[0.06]">
+                <div className="mx-auto max-w-[1200px] px-6 lg:px-10">
+                    <div className="flex items-center justify-between h-[72px]">
+                        {/* Left: Logo + separator + nav */}
+                        <div className="flex items-center">
+                            <Link href="/" aria-label="home" className="flex items-center shrink-0">
                                 <Image
                                     src="/logo.png"
-                                    alt="Pompex — IT rešitve na enem mestu"
-                                    width={180}
-                                    height={60}
-                                    className="h-10 md:h-14 w-auto"
+                                    alt="Pompex"
+                                    width={200}
+                                    height={56}
+                                    className="h-14 w-auto"
                                 />
                             </Link>
 
-                            <button
-                                onClick={() => setMenuState(!menuState)}
-                                aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
-                                className="relative z-60 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
-                                <Menu className={cn("m-auto size-6 duration-200", menuState && "rotate-180 scale-0 opacity-0")} />
-                                <X className={cn("absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200", menuState && "rotate-0 scale-100 opacity-100")} />
-                            </button>
-                        </div>
+                            <div className="hidden lg:block h-6 w-px bg-white/20 mx-8" />
 
-                        <div className="absolute inset-0 m-auto hidden size-fit lg:block">
-                            <ul className="flex gap-8 text-sm font-semibold">
+                            <ul className="hidden lg:flex items-center gap-8">
                                 {menuItems.map((item, index) => (
                                     <li key={index}>
                                         <Link
                                             href={item.href}
-                                            className="text-muted-foreground hover:text-accent-foreground block duration-150">
-                                            <span>{item.name}</span>
+                                            className="text-white/60 hover:text-white text-[16px] font-medium transition-colors duration-200">
+                                            {item.name}
                                         </Link>
                                     </li>
                                 ))}
                             </ul>
                         </div>
 
-                        <div className="hidden lg:flex lg:w-fit lg:gap-6">
+                        {/* Right: CTA */}
+                        <div className="hidden lg:block">
                             <Button
                                 asChild
-                                size="sm"
-                                className="relative">
-                                <Link href="#kontakt" className="flex items-center pr-13">
-                                    <span>Začni</span>
-                                    <div className="absolute right-2 flex items-center justify-center w-6 h-6 bg-white rounded-full">
-                                        <ArrowUpRight className="h-3.5 w-3.5 text-black" />
-                                    </div>
+                                className="bg-blue-600 hover:bg-blue-500 text-white border-0 h-11 px-6 text-[15px] font-semibold">
+                                <Link href="#kontakt">
+                                    Začni zdaj
                                 </Link>
                             </Button>
                         </div>
+
+                        <button
+                            onClick={() => setMenuState(!menuState)}
+                            aria-label={menuState ? 'Close Menu' : 'Open Menu'}
+                            className="relative z-60 block cursor-pointer p-2 lg:hidden">
+                            <Menu className={cn("size-6 text-white transition-all duration-200", menuState && "rotate-180 scale-0 opacity-0")} />
+                            <X className={cn("absolute inset-0 m-auto size-6 text-white -rotate-180 scale-0 opacity-0 transition-all duration-200", menuState && "rotate-0 scale-100 opacity-100")} />
+                        </button>
                     </div>
                 </div>
             </nav>
 
-            {/* Mobile Menu Drawer - Completely separate from header */}
+            {/* Mobile Menu */}
             <div className={cn(
-                "fixed inset-0 z-40 bg-black/20 backdrop-blur-sm transition-all duration-300 lg:hidden",
+                "fixed inset-0 z-40 bg-black/50 backdrop-blur-sm transition-all duration-300 lg:hidden",
                 menuState ? "opacity-100 visible" : "opacity-0 invisible"
             )}>
                 <div className={cn(
-                    "absolute top-20 left-2 right-2 mx-auto max-w-sm bg-background rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 transition-all duration-300",
+                    "absolute top-20 left-4 right-4 mx-auto max-w-sm bg-[#0d1225] rounded-2xl border border-white/10 p-6 shadow-2xl transition-all duration-300",
                     menuState ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
                 )}>
-                    <div className="space-y-6">
-                        <ul className="space-y-6 text-base font-semibold">
-                            {menuItems.map((item, index) => (
-                                <li key={index}>
-                                    <Link
-                                        href={item.href}
-                                        onClick={() => setMenuState(false)}
-                                        className="text-muted-foreground hover:text-accent-foreground block duration-150">
-                                        <span>{item.name}</span>
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                        <div className="pt-4 border-t">
-                            <Button
-                                asChild
-                                size="sm"
-                                className="relative w-full">
-                                <Link href="#kontakt" onClick={() => setMenuState(false)} className="flex items-center justify-center pr-13">
-                                    <span>Začni</span>
-                                    <div className="absolute right-2 flex items-center justify-center w-6 h-6 bg-white rounded-full">
-                                        <ArrowUpRight className="h-3.5 w-3.5 text-black" />
-                                    </div>
+                    <ul className="space-y-1">
+                        {menuItems.map((item, index) => (
+                            <li key={index}>
+                                <Link
+                                    href={item.href}
+                                    onClick={() => setMenuState(false)}
+                                    className="text-white/60 hover:text-white hover:bg-white/5 block px-4 py-3 rounded-lg text-[16px] font-medium transition-all duration-200">
+                                    {item.name}
                                 </Link>
-                            </Button>
-                        </div>
+                            </li>
+                        ))}
+                    </ul>
+                    <div className="mt-4 pt-4 border-t border-white/10">
+                        <Button
+                            asChild
+                            className="w-full bg-blue-600 hover:bg-blue-500 text-white border-0 h-11 text-[15px] font-semibold">
+                            <Link href="#kontakt" onClick={() => setMenuState(false)}>
+                                Začni zdaj
+                            </Link>
+                        </Button>
                     </div>
                 </div>
             </div>

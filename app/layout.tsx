@@ -1,10 +1,9 @@
 import type { Metadata, Viewport } from "next"
 import Script from "next/script"
-import { Comfortaa, Geist_Mono } from "next/font/google"
+import { DM_Sans, Geist_Mono } from "next/font/google"
 import "./globals.css"
 
-// Use Comfortaa as the global sans font, keeping the same CSS variable name
-const comfortaa = Comfortaa({
+const dmSans = DM_Sans({
   variable: "--font-geist-sans",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -90,8 +89,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="sl">
-      <body className={`${comfortaa.variable} ${geistMono.variable} antialiased`}>
+    <html lang="sl" className="dark">
+      <body className={`${dmSans.variable} ${geistMono.variable} antialiased`}>
         {children}
         <Script id="ld-json" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify({

@@ -1,226 +1,118 @@
+'use client'
 import React from 'react'
 import Link from 'next/link'
-import { ArrowRight, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import Image from 'next/image'
 import { TextEffect } from '@/components/ui/text-effect'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { HeroHeader } from './header'
-import { ImageSlideshow } from '@/components/ui/image-slideshow'
+import { motion } from 'motion/react'
 
-const transitionVariants = {
-    container: {
-        visible: {
-            transition: {
-                staggerChildren: 0.1,
-            },
-        },
-    },
-    item: {
-        hidden: {
-            opacity: 0,
-            filter: 'blur(12px)',
-            y: 12,
-        },
-        visible: {
-            opacity: 1,
-            filter: 'blur(0px)',
-            y: 0,
-            transition: {
-                type: 'spring' as const,
-                bounce: 0.3,
-                duration: 1.5,
-            },
-        },
+const fadeUp = {
+    hidden: { opacity: 0, filter: 'blur(12px)', y: 12 },
+    visible: {
+        opacity: 1,
+        filter: 'blur(0px)',
+        y: 0,
+        transition: { type: 'spring' as const, bounce: 0.3, duration: 1.5 },
     },
 }
-
-// Slideshow images representing different services
-const slideshowImages = [
-    {
-        src: "/min/mydesk1-min.png",
-        alt: "Professional Workspace - Modern desk setup showcasing our comprehensive IT services",
-        width: 2700,
-        height: 1440,
-    },
-    {
-        src: "/min/mydesk-min.png",
-        alt: "Technical Workspace - Professional environment for hardware and software solutions",
-        width: 2700,
-        height: 1440,
-    },
-    {
-        src: "/min/Smartphone Close-Up-min.png",
-        alt: "Mobile Services - Smartphone repair and mobile application development",
-        width: 2700,
-        height: 1440,
-    },
-    {
-        src: "/min/Cozy Cafe Workstation-min.png",
-        alt: "Software Development - Laptop workspace for programming and web development services",
-        width: 2700,
-        height: 1440,
-    },
-]
 
 export default function HeroSection() {
     return (
         <>
             <HeroHeader />
-            <main className="overflow-hidden">
-                <div
-                    aria-hidden
-                    className="absolute inset-0 isolate hidden opacity-65 contain-strict lg:block">
-                    <div className="w-140 h-320 -translate-y-87.5 absolute left-0 top-0 -rotate-45 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,hsla(0,0%,85%,.08)_0,hsla(0,0%,55%,.02)_50%,hsla(0,0%,45%,0)_80%)]" />
-                    <div className="h-320 absolute left-0 top-0 w-60 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]" />
-                    <div className="h-320 -translate-y-87.5 absolute left-0 top-0 w-60 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]" />
-                </div>
-                <section>
-                    <div className="relative pt-16 md:pt-24">
-                        {/* Sky blue gradient background */}
-                        <div
-                            className="absolute inset-x-0 top-0 h-full pointer-events-none -z-10 sky-gradient-light"
-                        />
-                        {/* Sky blue gradient background for dark mode */}
-                        <div
-                            className="absolute inset-x-0 top-0 h-full pointer-events-none -z-10 dark:block hidden sky-gradient-dark"
-                        />
+            <main>
+                <section className="relative min-h-screen">
 
+                    {/* Light streaks */}
+                    <div className="absolute top-[-20%] left-[10%] w-[600px] h-[1200px] pointer-events-none rotate-[-25deg] bg-[linear-gradient(180deg,transparent_0%,rgba(37,99,235,0.12)_30%,rgba(59,130,246,0.20)_50%,rgba(37,99,235,0.12)_70%,transparent_100%)] blur-[80px]" />
+                    <div className="absolute top-[-10%] right-[5%] w-[400px] h-[1000px] pointer-events-none rotate-[15deg] bg-[linear-gradient(180deg,transparent_0%,rgba(99,102,241,0.08)_30%,rgba(79,70,229,0.14)_50%,rgba(99,102,241,0.08)_70%,transparent_100%)] blur-[100px]" />
+                    <div className="absolute top-0 left-0 right-0 h-[200px] pointer-events-none bg-gradient-to-b from-blue-600/[0.10] to-transparent" />
 
-                        <div
-                            aria-hidden
-                            className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"
-                        />
+                    {/* Content */}
+                    <div className="relative z-10 mx-auto max-w-[1200px] px-6 lg:px-10 min-h-screen flex flex-col">
 
-                        <div className="mx-auto max-w-7xl px-6">
-                            <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
+                        <div className="h-[72px] shrink-0" />
+
+                        {/* Centred content */}
+                        <div className="flex-1 flex items-center py-12 lg:py-0">
+                            <div className="max-w-[750px]">
+                                {/* Badge */}
+                                <AnimatedGroup
+                                    variants={{
+                                        container: { visible: { transition: { delayChildren: 0.1 } } },
+                                        item: fadeUp,
+                                    }}>
+                                    <div className="inline-flex items-center gap-2 bg-white/[0.04] border border-white/[0.08] rounded-full pl-1.5 pr-4 py-1 mb-8">
+                                        <span className="bg-blue-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                                            Novo
+                                        </span>
+                                        <span className="text-white/50 text-[13px] font-medium">
+                                            IT rešitve na enem mestu
+                                        </span>
+                                    </div>
+                                </AnimatedGroup>
+
+                                {/* Heading */}
                                 <TextEffect
                                     preset="fade-in-blur"
                                     speedSegment={0.3}
                                     as="h1"
                                     per="line"
-                                    className="font-sans mx-auto mt-6 max-w-4xl text-balance leading-[1.15] text-5xl max-md:font-semibold md:text-7xl lg:mt-12 xl:text-[5.25rem]"
+                                    className="font-sans text-[clamp(2.5rem,5.5vw,4.75rem)] font-bold leading-[1.12] tracking-[-0.025em] mb-6"
                                     segmentClassName="gradient-text">
-                                    Vaš zanesljiv partner za digitalne rešitve
+                                    Vaš zanesljiv partner za digitalne rešitve.
                                 </TextEffect>
+
+                                {/* Subtitle */}
                                 <TextEffect
                                     per="line"
                                     preset="fade-in-blur"
                                     speedSegment={0.3}
                                     delay={0.5}
                                     as="p"
-                                    className="font-sans mx-auto mt-6 max-w-2xl text-balance text-lg">
-                                    Računalniški servis, programiranje, spletne strani in aplikacije - vse na enem mestu.
+                                    className="font-sans text-white/[0.45] text-[16px] leading-[1.7] max-w-[480px] mb-10">
+                                    Računalniški servis, programiranje, spletne strani in aplikacije — vse na enem mestu.
                                 </TextEffect>
 
+                                {/* Buttons */}
                                 <AnimatedGroup
                                     variants={{
-                                        container: {
-                                            visible: {
-                                                transition: {
-                                                    staggerChildren: 0.05,
-                                                    delayChildren: 0.75,
-                                                },
-                                            },
-                                        },
-                                        item: transitionVariants.item,
+                                        container: { visible: { transition: { staggerChildren: 0.06, delayChildren: 0.75 } } },
+                                        item: fadeUp,
                                     }}
-                                    className="mt-8 flex flex-col items-center justify-center gap-2 md:flex-row">
-                                    <div
-                                        key={1}
-                                        className="bg-foreground/10 rounded-full border p-1">
-                                        <Button
-                                            asChild
-                                            size="lg"
-                                            className="rounded-full px-6 text-base">
-                                            <Link href="#kontakt">
-                                                <span className="text-nowrap">Pošlji povpraševanje</span>
-                                            </Link>
-                                        </Button>
-                                    </div>
+                                    className="flex flex-wrap gap-3">
                                     <Button
-                                        key={2}
                                         asChild
-                                        size="lg"
-                                        variant="ghost"
-                                        className="h-11 rounded-full px-6">
-                                        <Link href="tel:068653596">
-                                            <span className="text-nowrap">Pokliči nas</span>
+                                        className="bg-white text-[#080B16] hover:bg-white/90 font-semibold border-0 h-[46px] px-7 text-[15px]">
+                                        <Link href="#kontakt">
+                                            Pošlji povpraševanje
                                         </Link>
                                     </Button>
+                                    <Button
+                                        asChild
+                                        variant="outline"
+                                        className="border-white/[0.12] text-white hover:bg-white/[0.04] hover:text-white font-semibold h-[46px] px-7 text-[15px]">
+                                        <Link href="tel:068653596">
+                                            Pokliči nas
+                                        </Link>
+                                    </Button>
+                                </AnimatedGroup>
+
+                                {/* Partner logos */}
+                                <AnimatedGroup
+                                    variants={{
+                                        container: { visible: { transition: { staggerChildren: 0.08, delayChildren: 1 } } },
+                                        item: fadeUp,
+                                    }}
+                                    className="flex items-center gap-10 mt-14">
+                                    <img className="h-7 w-auto object-contain brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300" src="/companies/kranfix.png" alt="KranFix" />
+                                    <img className="h-7 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-300" src="/companies/Techtrade.png" alt="Tech Trade" />
+                                    <img className="h-7 w-auto object-contain brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300" src="/companies/gamenight-logo.png" alt="Game Night" />
                                 </AnimatedGroup>
                             </div>
                         </div>
 
-                        <AnimatedGroup
-                            variants={{
-                                container: {
-                                    visible: {
-                                        transition: {
-                                            staggerChildren: 0.05,
-                                            delayChildren: 0.75,
-                                        },
-                                    },
-                                },
-                                item: transitionVariants.item,
-                            }}>
-                            <div className="mask-b-from-55% relative mt-6 overflow-hidden px-0 sm:px-1 sm:mt-8 md:mt-14">
-                                <div className="inset-shadow-2xs  dark:inset-shadow-white/20 bg-background relative mx-auto max-w-sm overflow-hidden rounded-xl border p-0.5 shadow-lg shadow-zinc-950/15 sm:max-w-lg sm:rounded-2xl sm:p-2 md:max-w-2xl md:p-3 lg:max-w-3xl xl:max-w-4xl">
-
-                                    <ImageSlideshow
-                                        images={slideshowImages}
-                                        className="bg-background z-2 aspect-video relative size-full sm:aspect-[4/3] md:aspect-15/8"
-                                        autoPlayInterval={5000}
-                                        showIndicators={true}
-                                    />
-                                </div>
-                            </div>
-                        </AnimatedGroup>
-                    </div>
-                </section>
-                <section className="bg-background pb-8 pt-6 md:pb-24 md:pt-12">
-                    <div className="group relative m-auto max-w-5xl px-6">
-
-                        <div className="absolute inset-0 z-10 flex scale-95 items-center justify-center opacity-0 duration-500 group-hover:scale-100 group-hover:opacity-100">
-                            <Link
-                                href="/"
-                                className="block text-sm duration-150 hover:opacity-75">
-                                <span> Promocija</span>
-
-                                <ChevronRight className="ml-1 inline-block size-3" />
-                            </Link>
-                        </div>
-                        <div className="group-hover:blur-xs mx-auto mt-4 grid max-w-2xl grid-cols-3 gap-x-8 gap-y-6 transition-all duration-500 group-hover:opacity-50 sm:mt-8 sm:gap-x-12 sm:gap-y-8 md:gap-x-16 md:gap-y-14">
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-12 w-fit object-contain sm:h-16 md:h-20"
-                                    src="/companies/kranfix.png"
-                                    alt="Popravilo Telefonov Logo"
-                                    height="80"
-                                    width="auto"
-                                />
-                            </div>
-
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-12 w-fit object-contain sm:h-16 md:h-20"
-                                    src="/companies/Techtrade.png"
-                                    alt="Tech Trade Logo"
-                                    height="80"
-                                    width="auto"
-                                />
-                            </div>
-
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-12 w-fit object-contain sm:h-16 md:h-20"
-                                    src="/companies/gamenight-logo.png"
-                                    alt="Game Night Logo"
-                                    height="80"
-                                    width="auto"
-                                />
-                            </div>
-                        </div>
                     </div>
                 </section>
             </main>

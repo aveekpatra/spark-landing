@@ -17,17 +17,14 @@ interface ImageSlideshowProps {
   showIndicators?: boolean
 }
 
-// Animation variants matching the hero section's motion library patterns
 const slideVariants = {
   enter: (direction: number) => ({
     x: direction > 0 ? 300 : -300,
     opacity: 0,
-    scale: 1.05,
   }),
   center: {
     x: 0,
     opacity: 1,
-    scale: 1,
     transition: {
       type: 'spring' as const,
       bounce: 0.2,
@@ -37,9 +34,8 @@ const slideVariants = {
   exit: (direction: number) => ({
     x: direction < 0 ? 300 : -300,
     opacity: 0,
-    scale: 0.95,
     transition: {
-      duration: 0.5,
+      duration: 0.4,
     },
   }),
 }
@@ -76,12 +72,10 @@ export function ImageSlideshow({
 
     if (Math.abs(info.offset.x) > swipeThreshold || Math.abs(info.velocity.x) > swipeVelocityThreshold) {
       if (info.offset.x > 0) {
-        // Swiped right - go to previous
         const newIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1
         setDirection(-1)
         setCurrentIndex(newIndex)
       } else {
-        // Swiped left - go to next
         const newIndex = (currentIndex + 1) % images.length
         setDirection(1)
         setCurrentIndex(newIndex)
@@ -92,43 +86,34 @@ export function ImageSlideshow({
   if (images.length === 0) return null
 
   return (
-    <div className={cn("relative overflow-hidden", className)}>
-      {/* Image Container */}
-      <div className="relative w-full h-full">
-        <AnimatePresence mode="wait" custom={direction}>
-          <motion.div
-            key={currentIndex}
-            custom={direction}
-            variants={slideVariants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={0.2}
-            onDragEnd={handleDragEnd}
-            className="absolute inset-0 cursor-grab active:cursor-grabbing"
-          >
-            <Image
-              src={images[currentIndex].src}
-              alt={images[currentIndex].alt}
-              width={images[currentIndex].width}
-              height={images[currentIndex].height}
-              className="w-full h-full object-cover object-center rounded-xl sm:rounded-2xl pointer-events-none"
-              loading={currentIndex === 0 ? "eager" : "lazy"}
-              priority={currentIndex === 0}
-              style={{
-                objectFit: 'cover',
-                objectPosition: 'center',
-              }}
-            />
-          </motion.div>
-        </AnimatePresence>
-      </div>
+    <div className={cn("relative overflow-hidden rounded-xl", className)}>
+      <AnimatePresence mode="wait" custom={direction}>
+        <motion.div
+          key={currentIndex}
+          custom={direction}
+          variants={slideVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.2}
+          onDragEnd={handleDragEnd}
+          className="cursor-grab active:cursor-grabbing"
+        >
+          {/* Use a standard img tag as fallback to ensure it renders */}
+          <img
+            src={images[currentIndex].src}
+            alt={images[currentIndex].alt}
+            className="w-full h-auto object-cover pointer-events-none rounded-xl"
+            loading={currentIndex === 0 ? "eager" : "lazy"}
+          />
+        </motion.div>
+      </AnimatePresence>
 
-      {/* Subtle overlay for better text readability on indicators */}
+      {/* Bottom gradient for indicators */}
       {showIndicators && images.length > 1 && (
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/40 to-transparent pointer-events-none rounded-b-xl" />
       )}
 
       {/* Indicators */}
@@ -139,12 +124,12 @@ export function ImageSlideshow({
               key={index}
               onClick={() => goToSlide(index)}
               className={cn(
-                "w-2 h-2 rounded-full transition-all duration-300 hover:scale-125",
+                "h-1.5 rounded-full transition-all duration-300",
                 index === currentIndex
-                  ? "bg-white shadow-lg"
-                  : "bg-white/50 hover:bg-white/75"
+                  ? "bg-white w-6 shadow-lg"
+                  : "bg-white/40 w-1.5 hover:bg-white/60"
               )}
-              whileHover={{ scale: 1.25 }}
+              whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}
               aria-label={`Go to slide ${index + 1}`}
             />
