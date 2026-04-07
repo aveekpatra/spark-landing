@@ -6,7 +6,6 @@ type Testimonial = {
     name: string
     role: string
     company: string
-    image: string
     quote: string
 }
 
@@ -15,45 +14,91 @@ const testimonials: Testimonial[] = [
         name: 'Marko Novak',
         role: 'Lastnik podjetja',
         company: 'Innovate Solutions',
-        image: 'https://randomuser.me/api/portraits/men/32.jpg',
         quote: 'Pompex mi je rešil računalnik v rekordnem času. Profesionalna storitev in odličen pristop!',
     },
     {
         name: 'Ana Kovač',
         role: 'Freelancer',
         company: 'Nexus Digital',
-        image: 'https://randomuser.me/api/portraits/women/44.jpg',
         quote: 'Potrebovala sem spletno stran za svoj posel. Ekipa Pompex je naredila čudovito stran, ki je hitro naložena in SEO optimizirana.',
     },
     {
         name: 'Janez Horvat',
         role: 'IT Manager',
         company: 'GreenLeaf Enterprises',
-        image: 'https://randomuser.me/api/portraits/men/75.jpg',
         quote: 'Avtomatizacija procesov, ki so jo naredili, nam je prihranila ogromno časa. Priporočam vsem!',
     },
     {
         name: 'Petra Kovač',
         role: 'Podjetnica',
         company: 'PixelWorks Studio',
-        image: 'https://randomuser.me/api/portraits/women/68.jpg',
         quote: 'Mobilna aplikacija za moj salon je presegla vsa pričakovanja. Stranke so navdušene nad enostavnostjo uporabe.',
     },
     {
         name: 'Luka Krajnc',
         role: 'Razvijalec',
         company: 'Mandro Designs',
-        image: 'https://randomuser.me/api/portraits/men/22.jpg',
         quote: 'Pompex ponuja vse IT rešitve na enem mestu. Od popravila računalnika do razvoja aplikacij - vse je na najvišji ravni.',
     },
     {
         name: 'Maja Vidmar',
         role: 'Marketing Manager',
         company: 'Fusion Studios',
-        image: 'https://randomuser.me/api/portraits/women/85.jpg',
         quote: 'WordPress stran, ki so jo ustvarili, je popolnoma odzivna in enostavna za upravljanje. Odličen dizajn!',
     },
 ]
+
+// Curated marble palettes — each pair gives a distinct vivid combo
+const PALETTES: Array<[string, string, string]> = [
+    ['#3b82f6', '#8b5cf6', '#06b6d4'], // blue / violet / cyan
+    ['#ec4899', '#f97316', '#fbbf24'], // pink / orange / amber
+    ['#10b981', '#06b6d4', '#3b82f6'], // emerald / cyan / blue
+    ['#a855f7', '#ec4899', '#6366f1'], // purple / pink / indigo
+    ['#f43f5e', '#a855f7', '#3b82f6'], // rose / purple / blue
+    ['#22d3ee', '#6366f1', '#a855f7'], // cyan / indigo / purple
+]
+
+function initialsOf(name: string) {
+    return name
+        .split(' ')
+        .map((p) => p[0])
+        .filter(Boolean)
+        .slice(0, 2)
+        .join('')
+        .toUpperCase()
+}
+
+function hashIndex(str: string, mod: number) {
+    let h = 0
+    for (let i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) | 0
+    return Math.abs(h) % mod
+}
+
+function MarbleAvatar({ name }: { name: string }) {
+    const [c1, c2, c3] = PALETTES[hashIndex(name, PALETTES.length)]
+    // Marble effect: layered radial gradients at offset positions, blended
+    const background = [
+        `radial-gradient(circle at 25% 20%, ${c1} 0%, transparent 55%)`,
+        `radial-gradient(circle at 80% 30%, ${c2} 0%, transparent 50%)`,
+        `radial-gradient(circle at 50% 85%, ${c3} 0%, transparent 60%)`,
+        `radial-gradient(circle at 70% 70%, ${c1}cc 0%, transparent 45%)`,
+        `linear-gradient(135deg, ${c2} 0%, ${c1} 50%, ${c3} 100%)`,
+    ].join(', ')
+
+    return (
+        <div
+            aria-hidden
+            className="relative w-10 h-10 rounded-full overflow-hidden flex items-center justify-center shrink-0 ring-1 ring-white/10"
+            style={{ background }}
+        >
+            {/* Glossy highlight */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_15%,rgba(255,255,255,0.45)_0%,transparent_45%)] pointer-events-none" />
+            <span className="relative text-white text-[13px] font-semibold tracking-wide drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
+                {initialsOf(name)}
+            </span>
+        </div>
+    )
+}
 
 function Stars() {
     return (
@@ -71,12 +116,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
             {/* Top: avatar + stars */}
             <div>
                 <div className="flex items-start justify-between mb-4">
-                    <img
-                        src={testimonial.image}
-                        alt={testimonial.name}
-                        className="w-10 h-10 rounded-full object-cover"
-                        loading="lazy"
-                    />
+                    <MarbleAvatar name={testimonial.name} />
                 </div>
 
                 <Stars />

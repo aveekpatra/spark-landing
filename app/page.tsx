@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import HeroSection from "@/components/hero-section";
 import ContentSection from "@/components/content-1";
+import AboutMe from "@/components/about-me";
 import Features from "@/components/services";
+import Reveal from "@/components/reveal";
 
 import TestimonialsSection from "@/components/testimonials";
 import FAQsTwo from "@/components/faqs-2";
@@ -15,21 +17,24 @@ export default function Home() {
         <HeroSection />
       </section>
       <section id="o-nas">
-        <ContentSection />
+        <Reveal><ContentSection /></Reveal>
+      </section>
+      <section id="o-meni">
+        <Reveal><AboutMe /></Reveal>
       </section>
       <section id="storitve">
-        <Features />
+        <Reveal><Features /></Reveal>
       </section>
       <section id="testimonials">
-        <TestimonialsSection />
+        <Reveal><TestimonialsSection /></Reveal>
       </section>
       <section id="faqs">
-        <FAQsTwo />
+        <Reveal><FAQsTwo /></Reveal>
       </section>
       <section id="kontakt">
-        <ContactSection />
+        <Reveal><ContactSection /></Reveal>
       </section>
-      <FooterSection />
+      <Reveal><FooterSection /></Reveal>
     </main>
   );
 }

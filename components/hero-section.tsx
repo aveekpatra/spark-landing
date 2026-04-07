@@ -24,10 +24,74 @@ export default function HeroSection() {
             <main>
                 <section className="relative min-h-screen">
 
-                    {/* Light streaks */}
-                    <div className="absolute top-[-20%] left-[10%] w-[600px] h-[1200px] pointer-events-none rotate-[-25deg] bg-[linear-gradient(180deg,transparent_0%,rgba(37,99,235,0.12)_30%,rgba(59,130,246,0.20)_50%,rgba(37,99,235,0.12)_70%,transparent_100%)] blur-[80px]" />
-                    <div className="absolute top-[-10%] right-[5%] w-[400px] h-[1000px] pointer-events-none rotate-[15deg] bg-[linear-gradient(180deg,transparent_0%,rgba(99,102,241,0.08)_30%,rgba(79,70,229,0.14)_50%,rgba(99,102,241,0.08)_70%,transparent_100%)] blur-[100px]" />
-                    <div className="absolute top-0 left-0 right-0 h-[200px] pointer-events-none bg-gradient-to-b from-blue-600/[0.10] to-transparent" />
+                    {/* Animated fluid gradient blobs */}
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        {/* Blob 1 — deep blue */}
+                        <motion.div
+                            className="absolute -top-[20%] -left-[10%] w-[70vw] h-[70vw] max-w-[900px] max-h-[900px] rounded-full opacity-80 mix-blend-screen"
+                            style={{
+                                background: 'radial-gradient(circle at 50% 50%, rgba(37,99,235,0.55) 0%, rgba(37,99,235,0.25) 35%, rgba(37,99,235,0) 70%)',
+                                filter: 'blur(80px)',
+                            }}
+                            animate={{
+                                x: ['0%', '25%', '-10%', '15%', '0%'],
+                                y: ['0%', '15%', '30%', '10%', '0%'],
+                                scale: [1, 1.15, 0.95, 1.1, 1],
+                            }}
+                            transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' }}
+                        />
+
+                        {/* Blob 2 — indigo / violet */}
+                        <motion.div
+                            className="absolute top-[10%] -right-[15%] w-[65vw] h-[65vw] max-w-[850px] max-h-[850px] rounded-full opacity-75 mix-blend-screen"
+                            style={{
+                                background: 'radial-gradient(circle at 50% 50%, rgba(129,140,248,0.50) 0%, rgba(99,102,241,0.22) 35%, rgba(99,102,241,0) 70%)',
+                                filter: 'blur(90px)',
+                            }}
+                            animate={{
+                                x: ['0%', '-20%', '10%', '-15%', '0%'],
+                                y: ['0%', '20%', '5%', '25%', '0%'],
+                                scale: [1, 0.9, 1.2, 1.05, 1],
+                            }}
+                            transition={{ duration: 26, repeat: Infinity, ease: 'easeInOut' }}
+                        />
+
+                        {/* Blob 3 — cyan accent */}
+                        <motion.div
+                            className="absolute top-[40%] left-[20%] w-[55vw] h-[55vw] max-w-[750px] max-h-[750px] rounded-full opacity-70 mix-blend-screen"
+                            style={{
+                                background: 'radial-gradient(circle at 50% 50%, rgba(34,211,238,0.40) 0%, rgba(14,165,233,0.18) 35%, rgba(14,165,233,0) 70%)',
+                                filter: 'blur(100px)',
+                            }}
+                            animate={{
+                                x: ['0%', '30%', '-15%', '20%', '0%'],
+                                y: ['0%', '-20%', '10%', '-10%', '0%'],
+                                scale: [1, 1.2, 0.85, 1.1, 1],
+                            }}
+                            transition={{ duration: 30, repeat: Infinity, ease: 'easeInOut' }}
+                        />
+
+                        {/* Blob 4 — magenta highlight */}
+                        <motion.div
+                            className="absolute -bottom-[20%] right-[10%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] rounded-full opacity-65 mix-blend-screen"
+                            style={{
+                                background: 'radial-gradient(circle at 50% 50%, rgba(168,85,247,0.45) 0%, rgba(139,92,246,0.20) 35%, rgba(139,92,246,0) 70%)',
+                                filter: 'blur(95px)',
+                            }}
+                            animate={{
+                                x: ['0%', '-25%', '15%', '-10%', '0%'],
+                                y: ['0%', '-15%', '-30%', '-5%', '0%'],
+                                scale: [1, 1.1, 0.9, 1.15, 1],
+                            }}
+                            transition={{ duration: 28, repeat: Infinity, ease: 'easeInOut' }}
+                        />
+
+                        {/* Subtle top sheen */}
+                        <div className="absolute top-0 left-0 right-0 h-[200px] bg-gradient-to-b from-blue-600/[0.10] to-transparent" />
+
+                        {/* Grain/contrast layer to keep text readable */}
+                        <div className="absolute inset-0 bg-[#080B16]/30" />
+                    </div>
 
                     {/* Content */}
                     <div className="relative z-10 mx-auto max-w-[1200px] px-6 lg:px-10 min-h-screen flex flex-col">
