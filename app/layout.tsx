@@ -92,6 +92,18 @@ export default function RootLayout({
     <html lang="sl" className="dark">
       <body className={`${dmSans.variable} ${geistMono.variable} antialiased`}>
         {children}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-3QFBDLQ7FX"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-3QFBDLQ7FX');
+          `}
+        </Script>
         <Script id="ld-json" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify({
             "@context": "https://schema.org",
