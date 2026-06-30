@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next"
 import Script from "next/script"
 import { DM_Sans, Geist_Mono } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 const dmSans = DM_Sans({
@@ -92,6 +93,7 @@ export default function RootLayout({
     <html lang="sl" className="dark">
       <body className={`${dmSans.variable} ${geistMono.variable} antialiased`}>
         {children}
+        <Analytics />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-3QFBDLQ7FX"
           strategy="afterInteractive"
